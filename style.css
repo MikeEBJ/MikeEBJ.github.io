@@ -1,13 +1,16 @@
+/* Reset the body margin and padding */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: #f6f8fa;
-    color: #333;
+    background: url('assets/background.png') no-repeat center center fixed;
+    background-size: cover;  /* Ensures the background covers the screen */
+    color: #fff;             /* White text for better contrast */
     text-align: center;
     height: 100vh;
   }
   
+  /* Header bar styles */
   header {
     background-color: #0078d4;
     padding: 10px 20px;
@@ -21,6 +24,7 @@ body {
     z-index: 999;
   }
   
+  /* Logo styles */
   header .logo img {
     height: 50px;
     transition: transform 0.2s ease;
@@ -30,18 +34,25 @@ body {
     transform: scale(1.05);
   }
   
+  /* Centering the center logo */
   header .logo.center {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
   }
   
+  /* Content area */
+  main {
+    padding-top: 90px;  /* Space for the fixed header */
+  }
+  
+  /* Centered content styles */
   .center-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 90px);  /* Fill the remaining screen space */
   }
   
   .center-content img {
@@ -51,5 +62,5 @@ body {
   
   .center-content p {
     font-size: 1.5em;
-    color: #555;
+    color: #fff; /* White text for contrast on the background */
   }
