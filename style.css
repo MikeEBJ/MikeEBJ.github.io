@@ -4,8 +4,8 @@ body {
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
     background: url('assets/background.png') no-repeat center center fixed;
-    background-size: cover;  /* Ensures the background covers the screen */
-    color: #fff;             /* White text for better contrast */
+    background-size: cover;
+    color: #fff;
     text-align: center;
     height: 100vh;
   }
@@ -17,7 +17,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 100px;  /* Increase height to give more space for larger logos */
     position: fixed;
     top: 0;
     width: 100%;
@@ -26,12 +26,13 @@ body {
   
   /* Logo styles */
   header .logo img {
-    height: 50px;
+    height: 70px;  /* Adjust this value to make the logos bigger */
     transition: transform 0.2s ease;
   }
   
+  /* Logo hover effect (optional) */
   header .logo img:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);  /* Slightly scale the logo on hover */
   }
   
   /* Centering the center logo */
@@ -43,13 +44,11 @@ body {
   
   /* Content area */
   main {
-    padding-top: 90px;  /* Space for the fixed header */
+    padding-top: 120px;  /* Adjust padding-top to make space for the larger header */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 70px); /* Adjust height to account for header */
-    background: url('assets/background.png') no-repeat center center fixed;
-    background-size: cover; /* Optional: You can have a specific background for each page too */
+    height: calc(100vh - 100px); /* Adjust height to account for the header */
   }
   
   /* Centered content styles */
@@ -64,5 +63,5 @@ body {
   
   .center-content p {
     font-size: 1.5em;
-    color: #fff; /* White text for contrast on the background */
+    color: #fff;
   }
