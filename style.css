@@ -44,15 +44,17 @@ body {
   /* Content area */
   main {
     padding-top: 90px;  /* Space for the fixed header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px); /* Adjust height to account for header */
+    background: url('assets/background.png') no-repeat center center fixed;
+    background-size: cover; /* Optional: You can have a specific background for each page too */
   }
   
   /* Centered content styles */
   .center-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 90px);  /* Fill the remaining screen space */
+    text-align: center;
   }
   
   .center-content img {
