@@ -17,22 +17,19 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;  /* Increase height to give more space for larger logos */
+    height: 100px;  /* Increased height for bigger logos */
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 999;
+    box-sizing: border-box;
   }
   
   /* Logo styles */
   header .logo img {
     height: 70px;  /* Adjust this value to make the logos bigger */
     transition: transform 0.2s ease;
-  }
-  
-  /* Logo hover effect (optional) */
-  header .logo img:hover {
-    transform: scale(1.1);  /* Slightly scale the logo on hover */
+    max-width: 100%; /* Ensures logos fit inside their container */
   }
   
   /* Centering the center logo */
@@ -40,6 +37,17 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+  }
+  
+  /* Make sure the right logo fits */
+  header .logo.right {
+    position: absolute;
+    right: 20px; /* Gives a bit of space from the right edge */
+  }
+  
+  /* Logo hover effect */
+  header .logo img:hover {
+    transform: scale(1.1);  /* Slightly scale the logo on hover */
   }
   
   /* Content area */
