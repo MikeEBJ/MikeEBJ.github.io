@@ -21,7 +21,7 @@ body, html {
 /* Background animation */
 body {
   background: url('assets/animated-background.gif') no-repeat center center fixed;
-  background-size: cover;
+  background-size: cover; /* This will scale the image to cover the screen without distortion */
   display: flex;
   justify-content: center;
   align-items: center;
