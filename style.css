@@ -1,6 +1,6 @@
 /* Apply Fira Code font and light grey color */
 body, html {
-  font-family: 'Fira Code', monospace; /* Fira Code font */
+  font-family: 'Fira Code', bold; /* Fira Code font */
   color: #00000000;
   margin: 0;
   padding: 0;
