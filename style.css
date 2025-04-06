@@ -63,7 +63,12 @@ h1 {
 
 /* -------- TEST PAGE OVERRIDES -------- */
 body.test-page {
-  background: linear-gradient(to bottom, #68BEF3 0%, #D1EFFE 70%, #DEF2FD 100%);
+  background: linear-gradient(to bottom,
+    #68BEF3 0%,    /* Top sky */
+    #90D9F7 30%,   /* Lighter blend in the middle */
+    #D1EFFE 65%,   /* Near the bottom */
+    #DEF2FD 90%    /* Very bottom before beach image */
+  );
   overflow-x: hidden;
   height: 100vh;
   display: block;
