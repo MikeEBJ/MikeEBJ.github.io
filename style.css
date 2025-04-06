@@ -79,7 +79,7 @@ body.test-page {
   height: 600px; /* Tripled height */
   background: url('assets/clouds.png') repeat-x;
   background-size: contain;
-  animation: slideClouds 180s linear infinite; /* Slower scroll */
+  animation: slideClouds 240s linear infinite; /* Slower scroll */
   z-index: 1;
 }
 
