@@ -86,7 +86,7 @@ body.test-page {
 /* Beach area */
 .beach {
   position: relative;
-  top: 200px;
+  top: 600px;
   background: #FFE4B5;
   min-height: calc(100vh - 200px);
   padding: 40px;
