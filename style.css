@@ -61,3 +61,31 @@ h1 {
   text-align: center;
   max-width: 600px;
 }
+
+/* Test Page Styles */
+body.test-page {
+  background-color: #9ADCEA;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Cloud animation */
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100vh;
+  background: url('assets/clouds.png') repeat-x;
+  background-size: cover;
+  animation: slideClouds 60s linear infinite;
+}
+
+@keyframes slideClouds {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
