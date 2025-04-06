@@ -63,20 +63,26 @@ h1 {
 
 /* -------- TEST PAGE OVERRIDES -------- */
 body.test-page {
-  background: linear-gradient(to bottom,
-    #68BEF3 0%,    /* Top sky */
-    #90D9F7 30%,   /* Lighter blend in the middle */
-    #D1EFFE 65%,   /* Near the bottom */
-    #DEF2FD 90%    /* Very bottom before beach image */
-  );
-  overflow-x: hidden;
-  height: 100vh;
-  display: block;
   margin: 0;
   padding: 0;
+  height: 100vh;
+  overflow: hidden;
   font-family: 'Fira Code', monospace;
   font-weight: bold;
   color: #000;
+
+  background: 
+    linear-gradient(to bottom,
+      #68BEF3 0%,     /* top sky blue */
+      #A7E3FC 30%,    /* lighter soft sky */
+      #DEF2FD 85%,    /* just above ocean */
+      #DEF2FD 100%    /* matches base image ocean tone */
+    ),
+    url("background.png"); /* replace with your actual path */
+  
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
 }
 
 /* Animated clouds at top */
