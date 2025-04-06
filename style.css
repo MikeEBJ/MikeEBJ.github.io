@@ -87,15 +87,15 @@ body.test-page {
   z-index: 1;
 }
 
-/* Combined ocean + beach image at the bottom */
+/* Combined ocean + beach image fully stretched at bottom */
 .ocean-beach {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 300px; /* Adjust to match your image height */
-  background: url('assets/beach.png') no-repeat bottom center;
-  background-size: cover;
+  height: 300px; /* Adjust if needed */
+  background: url('assets/beach.png') no-repeat;
+  background-size: 100% 100%; /* Stretch to fit container fully */
   z-index: 1;
 }
 
