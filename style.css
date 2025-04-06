@@ -103,3 +103,26 @@ body.test-page {
     transform: translateX(-50%);
   }
 }
+
+/* Ocean layer */
+.ocean {
+  position: absolute;
+  bottom: 0; /* Position it at the bottom of the page */
+  left: 0;
+  width: 300%; /* Stretch it across */
+  height: 300px; /* Ocean height (adjustable) */
+  background: url('assets/ocean.png') repeat-x; /* Ocean image */
+  background-size: cover;
+  animation: slideOcean 180s linear infinite; /* Slower scroll for ocean */
+  z-index: 0; /* Behind the beach and clouds */
+}
+
+/* Ocean animation for smooth scrolling */
+@keyframes slideOcean {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
