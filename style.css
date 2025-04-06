@@ -1,12 +1,22 @@
-/* Apply Fira Code font and black color */
+/* Global font and layout */
 body, html {
-  font-family: 'Fira Code', monospace; /* Fira Code font */
-  font-weight: bold; /* Make the font bold */
-  color: #000000; /* Black text color */
+  font-family: 'Fira Code', monospace;
+  font-weight: bold;
+  color: #000000;
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
+}
+
+/* Background animation for all pages EXCEPT test */
+body:not(.test-page) {
+  background: url('assets/animated-background.gif') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 /* Container to center everything */
@@ -20,17 +30,7 @@ body, html {
   z-index: 1;
 }
 
-/* Background animation */
-body {
-  background: url('assets/animated-background.gif') no-repeat center center fixed;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-/* Centered logo */
+/* Logo styling */
 .header {
   text-align: center;
   margin-bottom: 20px;
@@ -49,54 +49,43 @@ body {
 /* Main text styling */
 h1 {
   font-size: 3em;
-  color: #000000; /* Black text color */
   margin: 20px 0;
   text-align: center;
 }
 
 .desc {
   font-size: 1.5em;
-  color: #000000; /* Black text color */
   margin-bottom: 10px;
   text-align: center;
   max-width: 600px;
 }
 
-/* Test Page Styles */
+/* ---------- TEST PAGE OVERRIDES ---------- */
 body.test-page {
   background-color: #9ADCEA;
-  margin: 0;
-  overflow: hidden;
-}
-
-/* Clear inherited animated background from other pages */
-body.test-page {
-  background: #9ADCEA;
-  margin: 0;
-  padding: 0;
   overflow-x: hidden;
-  font-family: 'Fira Code', monospace;
-  color: #000;
+  height: 100vh;
+  display: block; /* Don't use flex here */
 }
 
-/* Clouds only at the top */
+/* Clouds at top of test page */
 .clouds {
   position: absolute;
   top: 0;
   left: 0;
   width: 200%;
-  height: 200px; /* Height of cloud band */
+  height: 200px;
   background: url('assets/clouds.png') repeat-x;
-  background-size: cover;
+  background-size: contain;
   animation: slideClouds 60s linear infinite;
   z-index: 1;
 }
 
-/* Beach section below */
+/* Beach section */
 .beach {
   position: relative;
-  top: 200px; /* Push it below clouds */
-  background: #FFE4B5; /* Light sand/beach color */
+  top: 200px;
+  background: #FFE4B5;
   min-height: calc(100vh - 200px);
   padding: 40px;
   text-align: center;
