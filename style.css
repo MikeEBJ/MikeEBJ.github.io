@@ -69,18 +69,41 @@ body.test-page {
   overflow: hidden;
 }
 
-/* Cloud animation */
+/* Clear inherited animated background from other pages */
+body.test-page {
+  background: #9ADCEA;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Fira Code', monospace;
+  color: #000;
+}
+
+/* Clouds only at the top */
 .clouds {
   position: absolute;
   top: 0;
   left: 0;
   width: 200%;
-  height: 100vh;
+  height: 200px; /* Height of cloud band */
   background: url('assets/clouds.png') repeat-x;
   background-size: cover;
   animation: slideClouds 60s linear infinite;
+  z-index: 1;
 }
 
+/* Beach section below */
+.beach {
+  position: relative;
+  top: 200px; /* Push it below clouds */
+  background: #FFE4B5; /* Light sand/beach color */
+  min-height: calc(100vh - 200px);
+  padding: 40px;
+  text-align: center;
+  z-index: 0;
+}
+
+/* Cloud animation */
 @keyframes slideClouds {
   0% {
     transform: translateX(0);
