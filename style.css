@@ -111,7 +111,7 @@ body.test-page {
 /* Ocean layer */
 .ocean {
   position: absolute;
-  top: 600px; /* Adjust if your sky is taller */
+  top: 800px; /* Adjust if your sky is taller */
   left: 0;
   width: 100%;
   height: 150px; /* Or however tall your ocean image is */
