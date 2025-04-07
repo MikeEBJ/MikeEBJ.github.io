@@ -79,13 +79,12 @@ body.test-page {
   position: relative;
 }
 
-body.test-page::after {
-  content: "";
+.sky-blur {
   position: absolute;
   left: 0;
   right: 0;
-  top: 65%; /* Adjust top position to limit the blur to the sky portion */
-  height: 35%; /* Set height to just cover the sky transition area */
+  top: 30%; /* Position the blur at the top section (adjust as needed) */
+  height: 35%; /* Only cover the sky portion */
   pointer-events: none;
   z-index: 1;
   backdrop-filter: blur(4px);
