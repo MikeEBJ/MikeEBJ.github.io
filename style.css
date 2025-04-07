@@ -34,17 +34,20 @@ body {
 /* Position the logo at the top center of the page */
 .logo {
   position: absolute;
-  top: 20px;
+  top: 20px; /* Adjust this value to move the logo vertically */
   left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  width: auto;
-  height: 100px;
-  transition: none;
+  transform: translateX(-50%); /* This will center the logo horizontally */
+  z-index: 10; /* Ensure it's above other elements */
+  width: auto; /* Keep the aspect ratio */
+  height: 100px; /* Adjust this to fit the desired height of the logo */
+  transition: none !important; /* Ensure no transitions or animations are applied */
 }
 
+/* Prevent any scaling or transformation on hover */
 .logo:hover {
-  transform: translateX(-50%); /* Prevents scaling on hover */
+  transform: translateX(-50%) !important; /* Prevents scaling or shifting */
+  width: auto !important;
+  height: 100px !important;
 }
 
 /* Clouds */
