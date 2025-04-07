@@ -316,18 +316,38 @@ h1 {
 }
 
 /* -------- MEDIA QUERIES -------- */
-@media (max-width: 768px) {
+/* For devices with a maximum width of 768px (e.g., tablets) */
+@media only screen and (max-width: 768px) {
+  .logo {
+    height: 150px; /* Adjust logo size for tablets */
+    top: 30px; /* Adjust position */
+  }
+
   .shop-button img {
-    width: 70vw;
+    width: 280px; /* Scale down shop button */
   }
 
-  .back-button {
-    font-size: 1em;
-    padding: 0.4em 0.8em;
+  .tattered-content {
+    font-size: 16px; /* Adjust font size */
   }
 
-  .tattered-overlay {
-    padding-top: 4vh;
-    top: 12vh;
+  /* Additional responsive adjustments */
+}
+
+/* For devices with a maximum width of 480px (e.g., smartphones) */
+@media only screen and (max-width: 480px) {
+  .logo {
+    height: 100px; /* Adjust logo size for smartphones */
+    top: 20px; /* Adjust position */
   }
+
+  .shop-button img {
+    width: 200px; /* Scale down shop button */
+  }
+
+  .tattered-content {
+    font-size: 14px; /* Adjust font size */
+  }
+
+  /* Additional responsive adjustments */
 }
