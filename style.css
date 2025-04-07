@@ -90,8 +90,8 @@ body.test-page::after {
   height: 20px; /* Narrow height for the blur effect */
   pointer-events: none;
   z-index: 2; /* Ensure the box stays above the beach image */
-  background-color: rgba(255, 0, 0, 0.5); /* Red color for debugging */
-  /* backdrop-filter: blur(4px); Uncomment to apply the actual blur */
+  /*background-color: rgba(255, 0, 0, 0.5); Red color for debugging */
+  backdrop-filter: blur(4px);
 }
 
 /* Animated clouds at top */
