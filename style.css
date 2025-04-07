@@ -201,53 +201,74 @@ body::after {
   text-overflow: ellipsis; /* Add ellipsis for overflowed text */
 }
 
-/* Grid Layout for Products */
+/* -------- PRODUCT GRID -------- */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Auto-width with a min size */
-  gap: 20px; /* Adjust the gap between items */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Stacked items in a wide grid */
+  gap: 20px 3px; /* Horizontal gap between categories, 3px vertical gap between items */
   padding: 20px;
-  width: 100%; /* Ensure it takes up the full width */
+  width: 100%;
 }
 
-/* Styling for Product Categories */
+/* -------- CATEGORY CONTAINER -------- */
+.category-container {
+  background: none;
+  border: 2px solid #595959; /* Optional: Adds a subtle border for each category */
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* -------- PRODUCT CATEGORY (Titles) -------- */
 .product-category {
   font-family: 'Patrick Hand', cursive;
-  font-size: 1.5em;
+  font-size: 2em;
   color: #595959;
   text-align: center;
   background: none;
-  margin: 0 auto;
-  padding: 10px;
-  border-bottom: 2px solid #595959;
-  text-transform: uppercase;
-  font-weight: bold;
+  margin: 0;
+  padding: 10px 0; /* Space between title and items */
+  text-transform: uppercase; /* Optional: Makes category names all uppercase */
 }
 
-/* Styling for Product Items */
+/* -------- CATEGORY ITEMS -------- */
+.category-items {
+  padding: 10px;
+  background: none;
+}
+
+/* -------- PRODUCT ITEM -------- */
 .product-item {
   font-family: 'Patrick Hand', cursive;
   font-size: 1.2em;
   color: #595959;
   text-align: center;
   background: none;
-  padding: 10px;
-  border: 1px solid #595959;
-  border-radius: 8px;
-  transition: transform 0.2s ease, background-color 0.3s ease;
+  margin: 0;
+  padding: 12px 0; /* Vertical spacing of 12px per item */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Crossed-out (Out of Stock) Items */
-.product-item.out-of-stock {
-  text-decoration: line-through;
-  color: #999;
-  background-color: #f7f7f7; /* Light gray background for out of stock items */
+/* -------- OUT OF STOCK ITEM -------- */
+.out-of-stock {
+  text-decoration: line-through; /* Strikes through the text */
+  color: #D3D3D3; /* Optional: Change the text color to a gray for a faded out effect */
 }
 
-/* Hover effect for product items */
-.product-item:hover {
-  background-color: #f0f0f0; /* Light gray on hover */
-  transform: scale(1.05);
+/* -------- HAND-DRAWN STYLE FOR SHOP TEXT -------- */
+.shop-text {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 3em;
+  color: #595959;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background: none;
+  display: block;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide overflow if text is too long */
+  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
 }
 
 .empty-space {
