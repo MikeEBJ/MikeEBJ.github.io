@@ -80,17 +80,18 @@ body.test-page {
   position: relative; /* Needed for positioning pseudo-element */
 }
 
+/* Add a box to visualize where the blur would go */
 body.test-page::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  top: calc(100% - 300px); /* Position the red bar at the top of the beach */
+  top: calc(100vh - 300px); /* Position the red bar at the top of the beach */
   height: 10px; /* Narrow height for the blur effect */
   pointer-events: none;
   z-index: 2; /* Ensure the box stays above the beach image */
   background-color: rgba(255, 0, 0, 0.5); /* Red color for debugging */
-  /* backdrop-filter: blur(4px);
+  /* backdrop-filter: blur(4px); Uncomment to apply the actual blur */
 }
 
 /* Animated clouds at top */
