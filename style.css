@@ -184,26 +184,6 @@ body::after {
   align-items: center;
 }
 
-.tattered-overlay::before,
-.tattered-overlay::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 50px; /* adjust as needed */
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.tattered-overlay::before {
-  background-image: url('assets/tattered-page-top.png');
-  margin-top: -50px;
-}
-
-.tattered-overlay::after {
-  background-image: url('assets/tattered-page-bottom.png');
-  margin-bottom: -50px;
-}
-
 /* Product Grid */
 .product-grid {
   display: grid;
