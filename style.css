@@ -139,6 +139,27 @@ body::after {
   display: block;
 }
 
+/* -------- BACK BUTTON -------- */
+.back-button {
+  position: absolute;
+  top: 20px; /* Adjust for desired spacing from the top */
+  left: 20px; /* Adjust for desired spacing from the left */
+  padding: 10px 20px;
+  background-color: #595959; /* Button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-family: 'Patrick Hand', cursive;
+  cursor: pointer;
+  z-index: 10; /* Ensure it appears on top */
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #3c3c3c; /* Darker shade when hovering */
+}
+
 /* -------- TATTERED CONTENT -------- */
 .tattered-content {
   width: 90%; /* Allow full width */
