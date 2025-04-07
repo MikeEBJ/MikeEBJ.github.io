@@ -130,7 +130,7 @@ body.test-page::after {
   background-size: contain;
   animation: slideCloudsSlow 600s linear infinite; /* Slower animation */
   z-index: 0; /* Behind the main clouds */
-  opacity: 0.5; /* Optional: make it more subtle */
+  opacity: 0.8; /* Optional: make it more subtle */
 }
 
 @keyframes slideCloudsSlow {
