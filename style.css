@@ -158,6 +158,29 @@ body::after {
   z-index: 6;
 }
 
+/* For the Shop Text */
+.shop-text {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 2em;
+  color: #595959;
+  text-align: center;
+  font-weight: normal;
+  background: none;
+  margin-top: 20px;
+}
+
+
+/* Optional: Style for the description */
+.desc {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.5em;
+  color: #595959;
+  text-align: center;
+  background: none;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 /* -------- OPTIONAL CENTER CONTAINER FOR LEGACY -------- */
 .container {
   display: flex;
