@@ -61,6 +61,7 @@ h1 {
 }
 
 
+/* -------- TEST PAGE OVERRIDES -------- */
 body.test-page {
   background: linear-gradient(to bottom,
     #68BEF3 0%,    /* Top sky */
@@ -76,22 +77,24 @@ body.test-page {
   font-family: 'Fira Code', monospace;
   font-weight: bold;
   color: #000;
-  position: relative;
+  position: relative; /* Needed for positioning pseudo-element */
 }
 
+/* Add small blur between the ocean-beach and sky */
 body.test-page::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  top: 65%; /* Position this at the border between sky and beach */
-  height: 20px; /* Very small height for the blur transition */
+  top: 65%; /* Position at the transition area between sky and ocean */
+  height: 20px; /* Small blur height */
   pointer-events: none;
   z-index: 1;
-  backdrop-filter: blur(4px); /* Apply a small blur */
+  backdrop-filter: blur(4px); /* Apply subtle blur */
   background: linear-gradient(to top, rgba(255, 255, 255, 0.6) 0%, transparent 100%);
 }
 
+/* Animated clouds at top */
 .clouds {
   position: absolute;
   top: 0;
@@ -104,6 +107,7 @@ body.test-page::after {
   z-index: 1;
 }
 
+/* Combined ocean + beach image fully stretched at bottom */
 .ocean-beach {
   position: absolute;
   bottom: 0;
@@ -115,6 +119,7 @@ body.test-page::after {
   z-index: 1;
 }
 
+/* Cloud animation */
 @keyframes slideClouds {
   0% {
     transform: translateX(0);
@@ -124,12 +129,13 @@ body.test-page::after {
   }
 }
 
+/* Stars layer on top of the sky */
 .stars {
   position: absolute;
   top: 0;
   left: 0;
   width: 200%;
-  height: 600px;
+  height: 600px; /* Match your sky height or go bigger */
   background: url('assets/Star\ Decor.png') repeat;
   background-size: contain;
   pointer-events: none; /* So clicks go through it */
