@@ -70,7 +70,7 @@ body.test-page {
     #DEF2FD 90%    /* Very bottom before beach image */
   );
   overflow-x: hidden;
-  height: 100vh;
+  min-height: 100vh;
   display: block;
   margin: 0;
   padding: 0;
@@ -117,6 +117,29 @@ body.test-page::after {
   background: url('assets/beach.png') no-repeat;
   background-size: 100% 100%; /* Stretch to fit container fully */
   z-index: 1;
+}
+
+/* Second layer of slower clouds */
+.clouds-slow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 600px;
+  background: url('assets/slow-clouds.png') repeat-x;
+  background-size: contain;
+  animation: slideCloudsSlow 600s linear infinite; /* Slower animation */
+  z-index: 0; /* Behind the main clouds */
+  opacity: 0.5; /* Optional: make it more subtle */
+}
+
+@keyframes slideCloudsSlow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Cloud animation */
