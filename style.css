@@ -201,63 +201,53 @@ body::after {
   text-overflow: ellipsis; /* Add ellipsis for overflowed text */
 }
 
-/* -------- PRODUCT GRID -------- */
+/* Grid Layout for Products */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Dynamic grid layout */
-  gap: 20px; /* Space between grid items */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Auto-width with a min size */
+  gap: 20px; /* Adjust the gap between items */
   padding: 20px;
+  width: 100%; /* Ensure it takes up the full width */
 }
 
-/* -------- CATEGORY CONTAINER -------- */
-.category-container {
-  background: none;
-  border: 2px solid #595959; /* Optional: Adds a subtle border for each category */
-  border-radius: 10px;
-  padding: 10px;
-}
-
-/* -------- PRODUCT CATEGORY (Titles) -------- */
+/* Styling for Product Categories */
 .product-category {
   font-family: 'Patrick Hand', cursive;
-  font-size: 2em;
+  font-size: 1.5em;
   color: #595959;
   text-align: center;
   background: none;
-  margin: 0;
-  padding: 10px 0; /* Space between title and items */
-  text-transform: uppercase; /* Optional: Makes category names all uppercase */
-}
-
-/* -------- CATEGORY ITEMS -------- */
-.category-items {
+  margin: 0 auto;
   padding: 10px;
-  background: none;
+  border-bottom: 2px solid #595959;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-/* -------- PRODUCT ITEM -------- */
+/* Styling for Product Items */
 .product-item {
   font-family: 'Patrick Hand', cursive;
   font-size: 1.2em;
   color: #595959;
   text-align: center;
   background: none;
-  margin: 5px 0;
-  padding: 5px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding: 10px;
+  border: 1px solid #595959;
+  border-radius: 8px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-/* -------- OUT OF STOCK ITEM -------- */
-.out-of-stock {
-  text-decoration: line-through; /* Strikes through the text */
-  color: #D3D3D3; /* Optional: Change the text color to a gray for a faded out effect */
+/* Crossed-out (Out of Stock) Items */
+.product-item.out-of-stock {
+  text-decoration: line-through;
+  color: #999;
+  background-color: #f7f7f7; /* Light gray background for out of stock items */
 }
 
-/* Optional: Adjust vertical padding for items */
-.product-item {
-  padding: 12px 0; /* Space between each product item */
+/* Hover effect for product items */
+.product-item:hover {
+  background-color: #f0f0f0; /* Light gray on hover */
+  transform: scale(1.05);
 }
 
 .empty-space {
