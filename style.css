@@ -155,6 +155,7 @@ body::after {
   padding-top: 60px;
 }
 
+/* -------- TATTERED CONTENT -------- */
 .tattered-content {
   width: 80%;
   max-width: 800px;
@@ -166,9 +167,11 @@ body::after {
   font-size: 18px;
   color: #000;
   z-index: 6;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Hand-drawn style for shop text */
+/* -------- Hand-drawn style for shop text -------- */
 .shop-text {
   font-family: 'Patrick Hand', cursive;
   font-size: 3em;
@@ -178,9 +181,12 @@ body::after {
   padding: 0;
   background: none;
   display: block;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide overflow if text is too long */
+  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
 }
 
-/* Optional: Style for the description */
+/* -------- Optional: Style for the description -------- */
 .desc {
   font-family: 'Patrick Hand', cursive;
   font-size: 1.5em;
@@ -190,37 +196,44 @@ body::after {
   margin: 0 auto;
   padding: 0;
   display: block;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide overflow if text is too long */
+  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
 }
 
 /* -------- PRODUCT GRID -------- */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
-  gap: 20px; /* Space between items */
-  margin-top: 30px;
-  padding: 20px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
 }
 
-/* Style for each category header */
 .product-category {
-  font-size: 2em;
-  font-weight: bold;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.8em;
+  color: #595959;
   text-align: center;
+  background: none;
+  margin: 0;
   padding: 10px 0;
-  background-color: transparent; /* Light background for category */
-  border: 1px solid transparent;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
 }
 
-/* Style for each product item */
 .product-item {
-  font-size: 1.5em;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.2em;
+  color: #595959;
   text-align: center;
+  background: none;
+  margin: 0;
   padding: 10px 0;
-  background-color: transparent; /* Light background for items */
-  border: 1px solid transparent;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
 }
 
 /* -------- OPTIONAL CENTER CONTAINER FOR LEGACY -------- */
