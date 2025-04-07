@@ -7,11 +7,13 @@ body, html {
   padding: 0;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
-/* Background animation for all pages EXCEPT test */
-body:not(.test-page) {
-  background: url('assets/animated-background.gif') no-repeat center center fixed;
+/* -------- LEGACY PAGE OVERRIDE -------- */
+body.legacy-page {
+  background: url('assets/Backgrounds/Legacy/animated-background.gif') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -19,7 +21,144 @@ body:not(.test-page) {
   height: 100vh;
 }
 
-/* Center container */
+/* -------- SKY + BACKGROUND DECOR -------- */
+body {
+  background: linear-gradient(to bottom,
+    #68BEF3 0%,
+    #90D9F7 30%,
+    #D1EFFE 65%,
+    #DEF2FD 90%
+  );
+}
+
+/* Clouds */
+.clouds,
+.clouds-slow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 600px;
+  background-size: contain;
+  background-repeat: repeat-x;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: 1;
+}
+
+.clouds {
+  background-image: url('assets/Backgrounds/Main/clouds.png');
+  animation-name: slideClouds;
+  animation-duration: 240s;
+  z-index: 1;
+}
+
+.clouds-slow {
+  background-image: url('assets/Backgrounds/Main/slow-clouds.png');
+  animation-name: slideCloudsSlow;
+  animation-duration: 600s;
+  opacity: 0.8;
+  z-index: 0;
+}
+
+@keyframes slideClouds {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes slideCloudsSlow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Stars */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 600px;
+  background: url('assets/Backgrounds/Main/Star\ Decor.png') repeat;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Ocean + Beach */
+.ocean-beach {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background: url('assets/Backgrounds/Main/beach.png') no-repeat;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+/* Beach-Sky Blur */
+body::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100vh - 310px);
+  height: 20px;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* -------- SHOP BUTTON -------- */
+.shop-button {
+  position: absolute;
+  bottom: 320px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  transition: transform 0.2s ease;
+}
+
+.shop-button:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.shop-button img {
+  width: 420px;
+  height: auto;
+  display: block;
+}
+
+/* -------- TATTERED OVERLAY FOR SHOP PAGE -------- */
+.tattered-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  top: 200px;
+  background: url('assets/tattered-page.png') no-repeat center bottom;
+  background-size: 100% 100%;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 60px;
+}
+
+.tattered-content {
+  width: 80%;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 20px;
+  border-radius: 12px;
+  font-family: 'Fira Code', monospace;
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+  z-index: 6;
+}
+
+/* -------- OPTIONAL CENTER CONTAINER FOR LEGACY -------- */
 .container {
   display: flex;
   flex-direction: column;
@@ -30,7 +169,6 @@ body:not(.test-page) {
   z-index: 1;
 }
 
-/* Logo styling */
 .header {
   text-align: center;
   margin-bottom: 20px;
@@ -46,7 +184,6 @@ body:not(.test-page) {
   transform: scale(1.1);
 }
 
-/* Main text */
 h1 {
   font-size: 3em;
   margin: 20px 0;
@@ -58,129 +195,4 @@ h1 {
   margin-bottom: 10px;
   text-align: center;
   max-width: 600px;
-}
-
-
-/* -------- TEST PAGE OVERRIDES -------- */
-body.test-page {
-  background: linear-gradient(to bottom,
-    #68BEF3 0%,    /* Top sky */
-    #90D9F7 30%,   /* Lighter blend in the middle */
-    #D1EFFE 65%,   /* Near the bottom */
-    #DEF2FD 90%    /* Very bottom before beach image */
-  );
-  overflow-x: hidden;
-  min-height: 100vh;
-  display: block;
-  margin: 0;
-  padding: 0;
-  font-family: 'Fira Code', monospace;
-  font-weight: bold;
-  color: #000;
-  position: relative; /* Needed for positioning pseudo-element */
-}
-
-/* Add a box to visualize where the blur would go */
-body.test-page::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: calc(100vh - 310px); /* Position the red bar at the top of the beach */
-  height: 20px; /* Narrow height for the blur effect */
-  pointer-events: none;
-  z-index: 2; /* Ensure the box stays above the beach image */
-  /*background-color: rgba(255, 0, 0, 0.5); Red color for debugging */
-  backdrop-filter: blur(4px);
-}
-
-/* Animated clouds at top */
-.clouds {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 300%;
-  height: 600px; /* Tripled height */
-  background: url('assets/clouds.png') repeat-x;
-  background-size: contain;
-  animation: slideClouds 240s linear infinite; /* Slower scroll */
-  z-index: 1;
-}
-
-/* Combined ocean + beach image fully stretched at bottom */
-.ocean-beach {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 300px; /* Adjust if needed */
-  background: url('assets/beach.png') no-repeat;
-  background-size: 100% 100%; /* Stretch to fit container fully */
-  z-index: 1;
-}
-
-/* Second layer of slower clouds */
-.clouds-slow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 300%;
-  height: 600px;
-  background: url('assets/slow-clouds.png') repeat-x;
-  background-size: contain;
-  animation: slideCloudsSlow 600s linear infinite; /* Slower animation */
-  z-index: 0; /* Behind the main clouds */
-  opacity: 0.8; /* Optional: make it more subtle */
-}
-
-@keyframes slideCloudsSlow {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* Cloud animation */
-@keyframes slideClouds {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* Stars layer on top of the sky */
-.stars {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 600px; /* Match your sky height or go bigger */
-  background: url('assets/Star\ Decor.png') repeat;
-  background-size: contain;
-  pointer-events: none; /* So clicks go through it */
-  z-index: 2;
-}
-
-.shop-button {
-  position: absolute;
-  bottom: 320px; /* slightly above the beach */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-
-.shop-button:hover {
-  transform: translateX(-50%) scale(1.1);
-}
-
-.shop-button img {
-  width: 420px; /* or whatever fits */
-  height: auto;
-  display: block;
 }
