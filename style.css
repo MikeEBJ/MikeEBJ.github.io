@@ -204,7 +204,7 @@ body::after {
 /* -------- PRODUCT GRID -------- */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Dynamic grid, min width of 250px per item */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Change here */
   gap: 3px 20px; /* 3px vertical gap between items, 20px horizontal gap */
   padding: 20px;
   width: 100%;
