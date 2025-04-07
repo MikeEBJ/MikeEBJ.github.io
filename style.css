@@ -1,6 +1,6 @@
 /* -------- GLOBAL STYLES -------- */
-body,
-html {
+html,
+body {
   font-family: 'Fira Code', monospace;
   font-weight: bold;
   color: #000;
@@ -10,6 +10,7 @@ html {
   height: 100%;
   overflow-x: hidden;
   position: relative;
+  font-size: clamp(12px, 1.5vw, 18px); /* Responsive base font size */
 }
 
 /* -------- LEGACY PAGE OVERRIDE -------- */
@@ -31,23 +32,20 @@ body {
       #DEF2FD 90%);
 }
 
-/* Position the logo at the top center of the page */
+/* Logo */
 .logo {
   position: absolute;
-  top: 20px;
+  top: 2vh;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
-  width: auto;
-  height: 100px;
-  transition: transform 0.3s ease; /* Adjusted for consistency */
+  height: 10vh;
+  max-height: 100px;
+  transition: transform 0.3s ease;
 }
 
-/* Hover effect */
 .logo:hover {
-  transform: translateX(-50%) scale(1.0); /* Prevent shrinking */
-  width: auto;
-  height: 100px;
+  transform: translateX(-50%) scale(1);
 }
 
 /* Clouds */
@@ -57,7 +55,7 @@ body {
   top: 0;
   left: 0;
   width: 300%;
-  height: 600px;
+  height: 30vh;
   background-size: contain;
   background-repeat: repeat-x;
   animation-timing-function: linear;
@@ -65,11 +63,11 @@ body {
   z-index: 1;
 }
 
+/* Cloud Images */
 .clouds {
   background-image: url('assets/Backgrounds/Main/clouds.png');
   animation-name: slideClouds;
   animation-duration: 240s;
-  z-index: 1;
 }
 
 .clouds-slow {
@@ -81,23 +79,13 @@ body {
 }
 
 @keyframes slideClouds {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 @keyframes slideCloudsSlow {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* Stars */
@@ -106,7 +94,7 @@ body {
   top: 0;
   left: 0;
   width: 200%;
-  height: 600px;
+  height: 30vh;
   background: url('assets/Backgrounds/Main/Star\ Decor.png') repeat;
   background-size: contain;
   pointer-events: none;
@@ -119,7 +107,7 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 300px;
+  height: 20vh;
   background: url('assets/Backgrounds/Main/beach.png') no-repeat;
   background-size: 100% 100%;
   z-index: 1;
@@ -131,17 +119,17 @@ body::after {
   position: absolute;
   left: 0;
   right: 0;
-  top: calc(100vh - 310px);
-  height: 20px;
+  top: calc(100vh - 21vh);
+  height: 2vh;
   backdrop-filter: blur(4px);
   z-index: 2;
   pointer-events: none;
 }
 
-/* -------- SHOP BUTTON -------- */
+/* Shop Button */
 .shop-button {
   position: absolute;
-  bottom: 380px;
+  bottom: 30vh;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
@@ -153,175 +141,142 @@ body::after {
 }
 
 .shop-button img {
-  width: 420px;
+  width: 25vw;
+  max-width: 420px;
   height: auto;
   display: block;
 }
 
-/* -------- BACK BUTTON -------- */
+/* Back Button */
 .back-button {
   position: absolute;
-  top: 20px; /* Adjust for desired spacing from the top */
-  left: 20px; /* Adjust for desired spacing from the left */
-  padding: 10px 20px;
-  background-color: #595959; /* Button color */
+  top: 2vh;
+  left: 2vw;
+  padding: 0.5em 1em;
+  background-color: #595959;
   color: white;
   border: none;
   border-radius: 5px;
   font-size: 1.2em;
   font-family: 'Patrick Hand', cursive;
   cursor: pointer;
-  z-index: 10; /* Ensure it appears on top */
+  z-index: 10;
   transition: background-color 0.3s ease;
 }
 
 .back-button:hover {
-  background-color: #3c3c3c; /* Darker shade when hovering */
+  background-color: #3c3c3c;
 }
 
-/* -------- TATTERED CONTENT -------- */
+/* Tattered Content */
 .tattered-content {
-  width: 90%; /* Allow full width */
-  max-width: none; /* Remove the 800px max-width to allow it to expand fully */
+  width: 90%;
   background: transparent;
-  padding: 20px;
+  padding: 2vh;
   border-radius: 12px;
   font-family: 'Fira Code', monospace;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.1em;
   color: #000;
   z-index: 6;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box; /* Ensure padding doesn't affect overall size */
-  margin: 0;
-  align-items: center; /* Optional: Center items within the content */
+  box-sizing: border-box;
+  align-items: center;
 }
 
-/* -------- PRODUCT GRID -------- */
+/* Product Grid */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Allow smaller boxes based on content */
-  gap: 3px 5px; /* 3px vertical gap, 20px horizontal gap */
-  padding: 20px 0; /* Padding only vertically */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.5vh 1vw;
+  padding: 2vh 0;
   width: 100%;
-  grid-auto-rows: auto; /* Allow grid items to grow based on content */
 }
 
-/* -------- TATTERED OVERLAY FOR SHOP PAGE -------- */
+/* Tattered Overlay */
 .tattered-overlay {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%); /* Center the overlay */
-  width: calc(100% - 100px); /* Reduce width slightly (adjust the '20px' as needed) */
-  top: 200px;
+  transform: translateX(-50%);
+  width: 90%;
+  top: 15vh;
   background: url('assets/tattered-page.png') no-repeat center bottom;
   background-size: 100% 100%;
   z-index: 5;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 60px;
+  padding-top: 6vh;
   box-sizing: border-box;
 }
 
-/* -------- Hand-drawn style for shop text -------- */
+/* Hand-Drawn Shop Text */
 .shop-text {
   font-family: 'Patrick Hand', cursive;
-  font-size: 3em;
+  font-size: clamp(1.5em, 3vw, 3em);
   color: #595959;
   text-align: center;
   margin: 0;
-  padding: 0;
-  background: none;
-  display: block;
-  white-space: nowrap; /* Prevent wrapping */
-  overflow: hidden; /* Hide overflow if text is too long */
-  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
-}
-
-/* -------- Optional: Style for the description -------- */
-.desc {
-  font-family: 'Patrick Hand', cursive;
-  font-size: 1.5em;
-  color: #595959;
-  text-align: center;
-  background: none;
-  margin: 0 auto;
-  padding: 0;
-  display: block;
-  white-space: nowrap; /* Prevent wrapping */
-  overflow: hidden; /* Hide overflow if text is too long */
-  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
-}
-
-/* -------- CATEGORY CONTAINER -------- */
-.category-container {
-  background: none;
-  padding: 10px;
-  /* No border or outline */
-}
-
-/* -------- PRODUCT CATEGORY (Titles) -------- */
-.product-category {
-  font-family: 'Patrick Hand', cursive;
-  font-size: 2em;
-  color: #595959;
-  text-align: center;
-  background: none;
-  margin: 0;
-  padding: 10px 0; /* Space between title and items */
-  text-transform: uppercase; /* Optional: Makes category names all uppercase */
-}
-
-/* -------- CATEGORY ITEMS -------- */
-.category-items {
-  padding: 10px;
-  background: none;
-}
-
-/* -------- PRODUCT ITEM -------- */
-.product-item {
-  font-family: 'Patrick Hand', cursive;
-  font-size: 1.2em;
-  color: #595959;
-  text-align: center;
-  background: none;
-  margin: 0;
-  padding: 2px 0; /* Vertical spacing of 12px per item */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* -------- OUT OF STOCK ITEM -------- */
-.out-of-stock {
-  text-decoration: line-through; /* Strikes through the text */
-  color: #D3D3D3; /* Optional: Change the text color to a gray for a faded out effect */
+.desc {
+  font-family: 'Patrick Hand', cursive;
+  font-size: clamp(1em, 2vw, 1.5em);
+  color: #595959;
+  text-align: center;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* -------- HAND-DRAWN STYLE FOR SHOP TEXT -------- */
-.shop-text {
+/* Category Titles */
+.product-category {
   font-family: 'Patrick Hand', cursive;
-  font-size: 3em;
+  font-size: clamp(1.2em, 2vw, 2em);
   color: #595959;
   text-align: center;
   margin: 0;
-  padding: 0;
-  background: none;
-  display: block;
-  white-space: nowrap; /* Prevent wrapping */
-  overflow: hidden; /* Hide overflow if text is too long */
-  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+  padding: 1vh 0;
+  text-transform: uppercase;
 }
 
+/* Category Items */
+.category-items {
+  padding: 1vh;
+  background: none;
+}
+
+/* Product Item */
+.product-item {
+  font-family: 'Patrick Hand', cursive;
+  font-size: clamp(1em, 1.5vw, 1.2em);
+  color: #595959;
+  text-align: center;
+  padding: 0.2em 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Out of Stock */
+.out-of-stock {
+  text-decoration: line-through;
+  color: #D3D3D3;
+}
+
+/* Empty Space */
 .empty-space {
   background: transparent;
   border: none;
 }
 
-/* -------- OPTIONAL CENTER CONTAINER FOR LEGACY -------- */
+/* Legacy Layout */
 .legacycontainer {
   display: flex;
   flex-direction: column;
@@ -334,11 +289,12 @@ body::after {
 
 .legacyheader {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 2vh;
 }
 
 .legacylogo {
-  width: 600px;
+  width: 50vw;
+  max-width: 600px;
   height: auto;
   transition: transform 0.3s ease;
 }
@@ -348,14 +304,31 @@ body::after {
 }
 
 h1 {
-  font-size: 3em;
-  margin: 20px 0;
+  font-size: clamp(2em, 4vw, 3em);
+  margin: 2vh 0;
   text-align: center;
 }
 
 .legacydesc {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+  font-size: clamp(1em, 2.5vw, 1.5em);
+  margin-bottom: 1vh;
   text-align: center;
-  max-width: 600px;
+  max-width: 90%;
+}
+
+/* -------- MEDIA QUERIES -------- */
+@media (max-width: 768px) {
+  .shop-button img {
+    width: 70vw;
+  }
+
+  .back-button {
+    font-size: 1em;
+    padding: 0.4em 0.8em;
+  }
+
+  .tattered-overlay {
+    padding-top: 4vh;
+    top: 12vh;
+  }
 }
