@@ -204,18 +204,18 @@ body::after {
 /* -------- PRODUCT GRID -------- */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Stacked items in a wide grid */
-  gap: 20px 3px; /* Horizontal gap between categories, 3px vertical gap between items */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Dynamic grid, min width of 250px per item */
+  gap: 3px 20px; /* 3px vertical gap between items, 20px horizontal gap */
   padding: 20px;
   width: 100%;
+  grid-auto-rows: auto; /* Ensures rows expand to fit content */
 }
 
 /* -------- CATEGORY CONTAINER -------- */
 .category-container {
   background: none;
-  border: 2px solid #595959; /* Optional: Adds a subtle border for each category */
-  border-radius: 10px;
   padding: 10px;
+  /* No border or outline */
 }
 
 /* -------- PRODUCT CATEGORY (Titles) -------- */
