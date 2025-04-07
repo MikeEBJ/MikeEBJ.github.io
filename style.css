@@ -204,36 +204,60 @@ body::after {
 /* -------- PRODUCT GRID -------- */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-  gap: 10px;
-  margin-top: 20px;
-  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Dynamic grid layout */
+  gap: 20px; /* Space between grid items */
+  padding: 20px;
 }
 
+/* -------- CATEGORY CONTAINER -------- */
+.category-container {
+  background: none;
+  border: 2px solid #595959; /* Optional: Adds a subtle border for each category */
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* -------- PRODUCT CATEGORY (Titles) -------- */
 .product-category {
   font-family: 'Patrick Hand', cursive;
-  font-size: 1.8em;
+  font-size: 2em;
   color: #595959;
   text-align: center;
   background: none;
   margin: 0;
-  padding: 10px 0;
-  white-space: nowrap; /* Prevent wrapping */
-  overflow: hidden; /* Hide overflow */
-  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+  padding: 10px 0; /* Space between title and items */
+  text-transform: uppercase; /* Optional: Makes category names all uppercase */
 }
 
+/* -------- CATEGORY ITEMS -------- */
+.category-items {
+  padding: 10px;
+  background: none;
+}
+
+/* -------- PRODUCT ITEM -------- */
 .product-item {
   font-family: 'Patrick Hand', cursive;
   font-size: 1.2em;
   color: #595959;
   text-align: center;
   background: none;
-  margin: 0;
-  padding: 4px 0;
-  white-space: nowrap; /* Prevent wrapping */
-  overflow: hidden; /* Hide overflow */
-  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+  margin: 5px 0;
+  padding: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* -------- OUT OF STOCK ITEM -------- */
+.out-of-stock {
+  text-decoration: line-through; /* Strikes through the text */
+  color: #D3D3D3; /* Optional: Change the text color to a gray for a faded out effect */
+}
+
+/* Optional: Adjust vertical padding for items */
+.product-item {
+  padding: 12px 0; /* Space between each product item */
 }
 
 .empty-space {
