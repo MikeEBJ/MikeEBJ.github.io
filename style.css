@@ -161,11 +161,9 @@ body::after {
 /* -------- PRODUCT GRID -------- */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-  gap: 3px 20px; /* 3px vertical gap, 20px horizontal gap */
-  padding: 20px 0; /* Padding only vertically */
-  width: 100%;
-  grid-auto-rows: auto; /* Allow grid items to grow based on content */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Dynamic grid layout */
+  gap: 5px; /* Adjust this value to make containers closer together */
+  padding: 10px;
 }
 
 /* -------- TATTERED OVERLAY FOR SHOP PAGE -------- */
@@ -174,7 +172,7 @@ body::after {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%); /* Center the overlay */
-  width: calc(100% - 20px); /* Reduce width slightly (adjust the '20px' as needed) */
+  width: calc(100% - 100px); /* Reduce width slightly (adjust the '20px' as needed) */
   top: 200px;
   background: url('assets/tattered-page.png') no-repeat center bottom;
   background-size: 100% 100%;
