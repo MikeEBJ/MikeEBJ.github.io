@@ -161,9 +161,11 @@ body::after {
 /* -------- PRODUCT GRID -------- */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Dynamic grid layout */
-  gap: 5px; /* Adjust this value to make containers closer together */
-  padding: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 3px 5px; /* 3px vertical gap, 20px horizontal gap */
+  padding: 20px 0; /* Padding only vertically */
+  width: 100%;
+  grid-auto-rows: auto; /* Allow grid items to grow based on content */
 }
 
 /* -------- TATTERED OVERLAY FOR SHOP PAGE -------- */
