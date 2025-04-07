@@ -161,7 +161,7 @@ body::after {
 /* -------- PRODUCT GRID -------- */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(auto, 1fr)); /* Allow smaller boxes based on content */
+  grid-template-columns: repeat(auto-fit, minmax(auto-fit, 1fr)); /* Allow smaller boxes based on content */
   gap: 3px 5px; /* 3px vertical gap, 20px horizontal gap */
   padding: 20px 0; /* Padding only vertically */
   width: 100%;
