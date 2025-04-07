@@ -34,7 +34,7 @@ body {
 /* Position the logo at the top center of the page */
 .logo {
   position: absolute;
-  top: 20px; /* Adjust this value to move the logo vertically */
+  top: 40px; /* Adjust this value to move the logo vertically */
   left: 50%;
   transform: translateX(-50%); /* This will center the logo horizontally */
   z-index: 10; /* Ensure it's above other elements */
