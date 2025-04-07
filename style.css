@@ -80,18 +80,18 @@ body.test-page {
   position: relative; /* Needed for positioning pseudo-element */
 }
 
-/* Small blur between the ocean-beach and sky */
+/* Add a box to visualize where the blur would go */
 body.test-page::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  top: 85%; /* Adjust to position the blur at the top of the beach area */
+  top: 85%; /* Adjust to position the box at the top of the beach area */
   height: 10px; /* Narrow height for the blur effect */
   pointer-events: none;
-  z-index: 2; /* Ensure the blur stays above the beach image */
-  backdrop-filter: blur(4px); /* Apply subtle blur */
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.6) 0%, transparent 100%);
+  z-index: 2; /* Ensure the box stays above the beach image */
+  background-color: rgba(255, 0, 0, 0.5); /* Red color for debugging */
+  /* backdrop-filter: blur(4px); Uncomment to apply the actual blur */
 }
 
 /* Animated clouds at top */
