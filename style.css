@@ -141,10 +141,10 @@ body::after {
 
 /* -------- TATTERED CONTENT -------- */
 .tattered-content {
-  width: 100%; /* Allow full width */
-  max-width: none; /* Remove the 800px max-width to allow it to expand fully */
+  width: 90%; /* Set width to 90% of the container width */
+  max-width: 800px; /* You can adjust this value to your desired width */
   background: transparent;
-  padding: 20px;
+  padding: 0; /* Remove internal padding */
   border-radius: 12px;
   font-family: 'Fira Code', monospace;
   font-weight: bold;
@@ -153,19 +153,19 @@ body::after {
   z-index: 6;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box; /* Ensure padding doesn't affect overall size */
-  margin: 0;
-  align-items: center; /* Optional: Center items within the content */
+  box-sizing: border-box; /* Ensures padding/margins don't affect overall width */
+  margin: 0 auto; /* Center the content */
 }
 
 /* -------- PRODUCT GRID -------- */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-  gap: 3px 5px; /* 3px vertical gap, 20px horizontal gap */
-  padding: 20px 0; /* Padding only vertically */
+  gap: 3px 5px; /* 3px vertical gap, 5px horizontal gap */
+  padding: 0; /* Remove padding for the grid */
   width: 100%;
   grid-auto-rows: auto; /* Allow grid items to grow based on content */
+  box-sizing: border-box; /* Ensures padding doesn't affect overall width */
 }
 
 /* -------- TATTERED OVERLAY FOR SHOP PAGE -------- */
