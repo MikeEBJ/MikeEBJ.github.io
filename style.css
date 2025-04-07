@@ -172,8 +172,9 @@ body::after {
 .tattered-overlay {
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%); /* Center the overlay */
+  width: calc(100% - 20px); /* Reduce width slightly (adjust the '20px' as needed) */
   top: 200px;
   background: url('assets/tattered-page.png') no-repeat center bottom;
   background-size: 100% 100%;
@@ -248,7 +249,7 @@ body::after {
   text-align: center;
   background: none;
   margin: 0;
-  padding: 12px 0; /* Vertical spacing of 12px per item */
+  padding: 2px 0; /* Vertical spacing of 12px per item */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
