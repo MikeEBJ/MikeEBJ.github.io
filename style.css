@@ -195,20 +195,20 @@ body::after {
 
 /* Tattered Overlay */
 .tattered-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  top: 15vh;
-  background: url('assets/tattered-page.png') no-repeat center bottom;
-  background-size: 100% 100%;
+  position: relative; /* no longer absolute */
+  margin-top: 200px; /* push it down */
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 100px);
+  background: url('assets/tattered-page.png') no-repeat center top;
+  background-size: 100% 100%; /* You can experiment with 'cover' or 'contain' too */
   z-index: 5;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 6vh;
+  padding: 60px 20px 60px 20px; /* Padding around content */
   box-sizing: border-box;
+  flex-direction: column; /* So content stacks */
 }
 
 /* Hand-Drawn Shop Text */
