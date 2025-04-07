@@ -184,6 +184,26 @@ body::after {
   align-items: center;
 }
 
+.tattered-overlay::before,
+.tattered-overlay::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 50px; /* adjust as needed */
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.tattered-overlay::before {
+  background-image: url('assets/tattered-page-top.png');
+  margin-top: -50px;
+}
+
+.tattered-overlay::after {
+  background-image: url('assets/tattered-page-bottom.png');
+  margin-bottom: -50px;
+}
+
 /* Product Grid */
 .product-grid {
   display: grid;
@@ -195,20 +215,18 @@ body::after {
 
 /* Tattered Overlay */
 .tattered-overlay {
-  position: relative; /* no longer absolute */
-  margin-top: 200px; /* push it down */
-  margin-left: auto;
-  margin-right: auto;
-  width: calc(100% - 100px);
-  background: url('assets/tattered-page.png') no-repeat center top;
-  background-size: 100% 100%; /* You can experiment with 'cover' or 'contain' too */
+  position: relative; /* was absolute */
+  width: 90%;
+  margin: 0 auto;
+  background: url('assets/tattered-page.png') repeat-y center top;
+  background-size: 100% auto;
   z-index: 5;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 60px 20px 60px 20px; /* Padding around content */
+  padding-top: 6vh;
+  padding-bottom: 6vh;
   box-sizing: border-box;
-  flex-direction: column; /* So content stacks */
 }
 
 /* Hand-Drawn Shop Text */
