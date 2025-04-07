@@ -180,7 +180,7 @@ body.test-page::after {
 }
 
 .shop-button img {
-  width: 120px; /* or whatever fits */
+  width: 420px; /* or whatever fits */
   height: auto;
   display: block;
 }
