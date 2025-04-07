@@ -230,10 +230,15 @@ body::after {
   text-align: center;
   background: none;
   margin: 0;
-  padding: 10px 0;
+  padding: 4px 0;
   white-space: nowrap; /* Prevent wrapping */
   overflow: hidden; /* Hide overflow */
   text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+}
+
+.empty-space {
+  background: transparent;
+  border: none;
 }
 
 /* -------- OPTIONAL CENTER CONTAINER FOR LEGACY -------- */
