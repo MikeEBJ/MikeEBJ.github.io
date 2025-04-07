@@ -1,5 +1,6 @@
 /* -------- GLOBAL STYLES -------- */
-body, html {
+body,
+html {
   font-family: 'Fira Code', monospace;
   font-weight: bold;
   color: #000;
@@ -24,11 +25,10 @@ body.legacy-page {
 /* -------- SKY + BACKGROUND DECOR -------- */
 body {
   background: linear-gradient(to bottom,
-    #68BEF3 0%,
-    #90D9F7 30%,
-    #D1EFFE 65%,
-    #DEF2FD 90%
-  );
+      #68BEF3 0%,
+      #90D9F7 30%,
+      #D1EFFE 65%,
+      #DEF2FD 90%);
 }
 
 /* Clouds */
@@ -62,13 +62,23 @@ body {
 }
 
 @keyframes slideClouds {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes slideCloudsSlow {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Stars */
@@ -158,17 +168,17 @@ body::after {
   z-index: 6;
 }
 
-/* For the Shop Text */
+/* Hand-drawn style for shop text */
 .shop-text {
   font-family: 'Patrick Hand', cursive;
-  font-size: 2em;
+  font-size: 3em;
   color: #595959;
   text-align: center;
-  font-weight: normal;
+  margin: 0;
+  padding: 0;
   background: none;
-  margin-top: 20px;
+  display: inline-block;
 }
-
 
 /* Optional: Style for the description */
 .desc {
@@ -177,8 +187,9 @@ body::after {
   color: #595959;
   text-align: center;
   background: none;
-  max-width: 600px;
   margin: 0 auto;
+  padding: 0;
+  display: inline-block;
 }
 
 /* -------- OPTIONAL CENTER CONTAINER FOR LEGACY -------- */
