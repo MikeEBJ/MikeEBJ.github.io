@@ -86,7 +86,7 @@ body.test-page::after {
   position: absolute;
   left: 0;
   right: 0;
-  top: calc(100vh - 305px); /* Position the red bar at the top of the beach */
+  top: calc(100vh - 310px); /* Position the red bar at the top of the beach */
   height: 20px; /* Narrow height for the blur effect */
   pointer-events: none;
   z-index: 2; /* Ensure the box stays above the beach image */
