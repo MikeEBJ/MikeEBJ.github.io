@@ -79,15 +79,16 @@ body.test-page {
   position: relative;
 }
 
-.sky-blur {
+body.test-page::after {
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
-  top: 30%; /* Position the blur at the top section (adjust as needed) */
-  height: 35%; /* Only cover the sky portion */
+  top: 65%; /* Position this at the border between sky and beach */
+  height: 20px; /* Very small height for the blur transition */
   pointer-events: none;
   z-index: 1;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px); /* Apply a small blur */
   background: linear-gradient(to top, rgba(255, 255, 255, 0.6) 0%, transparent 100%);
 }
 
