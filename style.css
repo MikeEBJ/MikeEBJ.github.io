@@ -32,20 +32,19 @@ body {
       #DEF2FD 90%);
 }
 
-/* Logo */
 .logo {
   position: absolute;
-  top: 2vh;
+  top: calc(2vh + 20px); /* 20px lower than before */
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
-  height: 10vh;
-  max-height: 100px;
+  height: 30vh; /* Previously 10vh, now triple */
+  max-height: 300px; /* Previously 100px, now triple */
   transition: transform 0.3s ease;
 }
 
 .logo:hover {
-  transform: translateX(-50%) scale(1);
+  transform: translateX(-50%) scale(1); /* Keeps center alignment */
 }
 
 /* Clouds */
