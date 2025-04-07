@@ -164,3 +164,23 @@ body.test-page::after {
   pointer-events: none; /* So clicks go through it */
   z-index: 2;
 }
+
+.shop-button {
+  position: absolute;
+  bottom: 320px; /* slightly above the beach */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.shop-button:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.shop-button img {
+  width: 120px; /* or whatever fits */
+  height: auto;
+  display: block;
+}
