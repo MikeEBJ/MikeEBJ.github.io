@@ -34,20 +34,20 @@ body {
 /* Position the logo at the top center of the page */
 .logo {
   position: absolute;
-  top: 20px; /* Adjust this value to move the logo vertically */
+  top: 20px;
   left: 50%;
-  transform: translateX(-50%); /* This will center the logo horizontally */
-  z-index: 10; /* Ensure it's above other elements */
-  width: auto; /* Keep the aspect ratio */
-  height: 100px; /* Adjust this to fit the desired height of the logo */
-  transition: none !important; /* Ensure no transitions or animations are applied */
+  transform: translateX(-50%);
+  z-index: 10;
+  width: auto;
+  height: 100px;
+  transition: transform 0.3s ease; /* Adjusted for consistency */
 }
 
-/* Prevent any scaling or transformation on hover */
+/* Hover effect */
 .logo:hover {
-  transform: translateX(-50%) !important; /* Prevents scaling or shifting */
-  width: auto !important;
-  height: 100px !important;
+  transform: translateX(-50%) scale(1.0); /* Prevent shrinking */
+  width: auto;
+  height: 100px;
 }
 
 /* Clouds */
@@ -322,7 +322,7 @@ body::after {
 }
 
 /* -------- OPTIONAL CENTER CONTAINER FOR LEGACY -------- */
-.container {
+.legacycontainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -332,18 +332,18 @@ body::after {
   z-index: 1;
 }
 
-.header {
+.legacyheader {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.logo {
+.legacylogo {
   width: 600px;
   height: auto;
   transition: transform 0.3s ease;
 }
 
-.logo:hover {
+.legacylogo:hover {
   transform: scale(1.1);
 }
 
@@ -353,7 +353,7 @@ h1 {
   text-align: center;
 }
 
-.desc {
+.legacydesc {
   font-size: 1.5em;
   margin-bottom: 10px;
   text-align: center;
