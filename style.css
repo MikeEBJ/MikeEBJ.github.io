@@ -195,17 +195,19 @@ body::after {
 
 /* Tattered Overlay */
 .tattered-overlay {
-  position: relative; /* was absolute */
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 90%;
-  margin: 0 auto;
-  background: url('assets/tattered-page.png') repeat-y center top;
-  background-size: 100% auto;
+  top: 15vh;
+  background: url('assets/tattered-page.png') no-repeat center bottom;
+  background-size: 100% 100%;
   z-index: 5;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding-top: 6vh;
-  padding-bottom: 6vh;
   box-sizing: border-box;
 }
 
