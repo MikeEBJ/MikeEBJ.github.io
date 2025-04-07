@@ -87,7 +87,7 @@ body.test-page::after {
   left: 0;
   right: 0;
   top: 85%; /* Position near the transition between sky and ocean-beach */
-  height: 10px; /* Very small height for the blur transition */
+  height: 40px; /* Very small height for the blur transition */
   pointer-events: none;
   z-index: 1;
   backdrop-filter: blur(4px); /* Apply subtle blur */
