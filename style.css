@@ -139,6 +139,35 @@ body::after {
   display: block;
 }
 
+/* -------- TATTERED CONTENT -------- */
+.tattered-content {
+  width: 100%; /* Allow full width */
+  max-width: none; /* Remove the 800px max-width to allow it to expand fully */
+  background: transparent;
+  padding: 20px;
+  border-radius: 12px;
+  font-family: 'Fira Code', monospace;
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box; /* Ensure padding doesn't affect overall size */
+  margin: 0;
+  align-items: center; /* Optional: Center items within the content */
+}
+
+/* -------- PRODUCT GRID -------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 3px 20px; /* 3px vertical gap, 20px horizontal gap */
+  padding: 20px 0; /* Padding only vertically */
+  width: 100%;
+  grid-auto-rows: auto; /* Allow grid items to grow based on content */
+}
+
 /* -------- TATTERED OVERLAY FOR SHOP PAGE -------- */
 .tattered-overlay {
   position: absolute;
@@ -153,22 +182,7 @@ body::after {
   justify-content: center;
   align-items: flex-start;
   padding-top: 60px;
-}
-
-/* -------- TATTERED CONTENT -------- */
-.tattered-content {
-  width: 80%;
-  max-width: 800px;
-  background: transparent;
-  padding: 20px;
-  border-radius: 12px;
-  font-family: 'Fira Code', monospace;
-  font-weight: bold;
-  font-size: 18px;
-  color: #000;
-  z-index: 6;
-  display: flex;
-  flex-direction: column;
+  box-sizing: border-box;
 }
 
 /* -------- Hand-drawn style for shop text -------- */
@@ -199,16 +213,6 @@ body::after {
   white-space: nowrap; /* Prevent wrapping */
   overflow: hidden; /* Hide overflow if text is too long */
   text-overflow: ellipsis; /* Add ellipsis for overflowed text */
-}
-
-/* -------- PRODUCT GRID -------- */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Change here */
-  gap: 3px 20px; /* 3px vertical gap between items, 20px horizontal gap */
-  padding: 20px;
-  width: 100%;
-  grid-auto-rows: auto; /* Ensures rows expand to fit content */
 }
 
 /* -------- CATEGORY CONTAINER -------- */
