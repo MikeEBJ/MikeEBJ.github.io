@@ -177,7 +177,7 @@ body::after {
   margin: 0;
   padding: 0;
   background: none;
-  display: inline-block;
+  display: block;
 }
 
 /* Optional: Style for the description */
@@ -189,7 +189,7 @@ body::after {
   background: none;
   margin: 0 auto;
   padding: 0;
-  display: inline-block;
+  display: block;
 }
 
 /* -------- OPTIONAL CENTER CONTAINER FOR LEGACY -------- */
