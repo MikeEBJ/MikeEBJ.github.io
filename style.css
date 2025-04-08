@@ -152,9 +152,10 @@ body::after {
   max-width: 500px;
   height: auto;
   display: block;
-  margin: 0 auto;
-  margin-top: 8vh;
+  margin: 15vh auto 0 auto; /* pushes it down further from top */
   transition: transform 0.3s ease;
+  z-index: 1; /* ensures it's above the background but not over logo */
+  position: relative; /* needed for z-index to take effect */
 }
 
 .weekly-deals-barrel img:hover {
