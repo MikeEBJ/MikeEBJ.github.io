@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
 
@@ -13,120 +14,129 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>L&M Shop</title>
-  
+
   <!-- Add Google Fonts link for hand-drawn font -->
   <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-<button class="back-button" onclick="window.history.back()">Back</button>
+  <button class="back-button" onclick="window.history.back()">Back</button>
   <div class="clouds-slow"></div>
   <div class="clouds"></div>
   <div class="stars"></div>
+  <div class="global-bg"></div>
   <div class="ocean-beach"></div>
 
   <div class="tattered-overlay">
-    <div class="tattered-content">
-      <h1 class="shop-text">Welcome to L&M!</h1>
-      <p class="desc">Explore our amazing products below!</p>
-      
-      <!-- Grid layout for product categories and items -->
-      <div class="product-grid">
-        
-        <!-- Dye Category -->
-        <div class="category-container">
-          <h2 class="product-category">Dyes</h2>
-          <div class="category-items">
-            <div class="product-item">Red - 64 for 1cc</div>
-            <div class="product-item">Orange - 64 for 1cc</div>
-            <div class="product-item">Yellow - 64 for 1cc</div>
-            <div class="product-item">Green - 16 for 1cc</div>
-            <div class="product-item">Lime - 16 for 1cc</div>
-            <div class="product-item">Light Blue - 32 for 1cc</div>
-            <div class="product-item">Blue - 16 for 1cc</div>
-            <div class="product-item out-of-stock">Cyan - 32 for 1cc</div>
-            <div class="product-item">Purple - 32 for 1cc</div>
-            <div class="product-item">Magenta - 64 for 1cc</div>
-            <div class="product-item">Pink - 64 for 1cc</div>
-            <div class="product-item out-of-stock">Gray - 16 for 1cc</div>
-            <div class="product-item">Light Gray - 32 for 1cc</div>
-            <div class="product-item">White - 64 for 1cc</div>
-            <div class="product-item">Black - 8 for 1cc</div>
-            <div class="product-item">Brown - 32 for 1cc</div>
-          </div>
-        </div>
-        
-        <!-- Logs Category -->
-        <div class="category-container">
-          <h2 class="product-category">Logs</h2>
-          <div class="category-items">
-            <div class="product-item out-of-stock">Pale Oak - 3 Stacks for 1cc</div>
-            <div class="product-item">Spruce & Stripped - 3 Stacks for 1cc</div>
-            <div class="product-item">Acacia & Stripped - 3 Stacks for 1cc</div>
-            <div class="product-item out-of-stock">Mangrove & Stripped - 3 Stacks for 1cc</div>
-            <div class="product-item out-of-stock">Crimson & Stripped - 3 Stacks for 1cc</div>
-            <div class="product-item">Jungle & Stripped - 3 Stacks for 1cc</div>
-            <div class="product-item out-of-stock">Bamboo & Stripped - 3 Stacks for 1cc</div>
-            <div class="product-item">Oak & Stripped - 3 Stacks for 1cc</div>
-            <div class="product-item out-of-stock">Warped & Stripped - 3 Stacks for 1cc</div>
-            <div class="product-item">Cherry & Stripped - 3 Stacks for 1cc</div>
-            <div class="product-item">Dark Oak & Stripped - 3 Stacks for 1cc</div>
-            <div class="product-item out-of-stock">Birch & Stripped - 3 Stacks for 1cc</div>
-          </div>
-        </div>
-  
-        <!-- Wooden Items Category -->
-        <div class="category-container">
-          <h2 class="product-category">Wooden Items</h2>
-          <div class="category-items">
-            <div class="product-item">Item Frames - 8 for 1cc</div>
-            <div class="product-item">Barrels - 32 for 1cc</div>
-            <div class="product-item">Gates - 8 for 1cc</div>
-            <div class="product-item">Trapdoors - 8 for 1cc</div>
-            <div class="product-item">Doors - 8 for 1cc</div>
-            <div class="product-item out-of-stock">Signs & Hanging - 8 for 1cc</div>
-            <div class="product-item">Armor Stands - 8 for 1cc</div>
-            <div class="product-item">Painting of BlueGamingCat - 1 for 1cc</div>
-          </div>
-        </div>
+    <div class="tattered-background">
+      <div class="tattered-top"></div>
+      <div class="tattered-middle">
+        <div class="tattered-content">
+            <h1 class="shop-text">Welcome to L&M!</h1>
+            <p class="desc">Explore our amazing products below!</p>
 
-        <!-- Enchanting Category -->
-        <div class="category-container">
-            <h2 class="product-category">Enchanting</h2>
-            <div class="category-items">
-              <div class="product-item">Anvil - 1 for 1cc</div>
-              <div class="product-item">Leather - 64 for 1cc</div>
-              <div class="product-item">Lapis - 20 for 1cc</div>
-              <div class="product-item out-of-stock">Paper - 64 for 1cc</div>
-              <div class="product-item">EXP Bottles - 2 Stacks for 1cc</div>
-              <div class="product-item">Books - 10 for 1cc</div>
-              <div class="product-item">Enchanted Books - 1 for 1cc</div>
-              <div class="product-item">Tree Feller - 1cc per Level</div>
-              <div class="product-item">Tree Shaker - 1cc per Level</div>
+            <!-- Grid layout for product categories and items -->
+            <div class="product-grid">
+
+              <!-- Dye Category -->
+              <div class="category-container">
+                <h2 class="product-category">Dyes</h2>
+                <div class="category-items">
+                  <div class="product-item">Red - 64 for 1cc</div>
+                  <div class="product-item">Orange - 64 for 1cc</div>
+                  <div class="product-item">Yellow - 64 for 1cc</div>
+                  <div class="product-item">Green - 16 for 1cc</div>
+                  <div class="product-item">Lime - 16 for 1cc</div>
+                  <div class="product-item">Light Blue - 32 for 1cc</div>
+                  <div class="product-item">Blue - 16 for 1cc</div>
+                  <div class="product-item out-of-stock">Cyan - 32 for 1cc</div>
+                  <div class="product-item">Purple - 32 for 1cc</div>
+                  <div class="product-item">Magenta - 64 for 1cc</div>
+                  <div class="product-item">Pink - 64 for 1cc</div>
+                  <div class="product-item out-of-stock">Gray - 16 for 1cc</div>
+                  <div class="product-item">Light Gray - 32 for 1cc</div>
+                  <div class="product-item">White - 64 for 1cc</div>
+                  <div class="product-item">Black - 8 for 1cc</div>
+                  <div class="product-item">Brown - 32 for 1cc</div>
+                </div>
+              </div>
+
+              <!-- Logs Category -->
+              <div class="category-container">
+                <h2 class="product-category">Logs</h2>
+                <div class="category-items">
+                  <div class="product-item out-of-stock">Pale Oak - 3 Stacks for 1cc</div>
+                  <div class="product-item">Spruce & Stripped - 3 Stacks for 1cc</div>
+                  <div class="product-item">Acacia & Stripped - 3 Stacks for 1cc</div>
+                  <div class="product-item out-of-stock">Mangrove & Stripped - 3 Stacks for 1cc</div>
+                  <div class="product-item out-of-stock">Crimson & Stripped - 3 Stacks for 1cc</div>
+                  <div class="product-item">Jungle & Stripped - 3 Stacks for 1cc</div>
+                  <div class="product-item out-of-stock">Bamboo & Stripped - 3 Stacks for 1cc</div>
+                  <div class="product-item">Oak & Stripped - 3 Stacks for 1cc</div>
+                  <div class="product-item out-of-stock">Warped & Stripped - 3 Stacks for 1cc</div>
+                  <div class="product-item">Cherry & Stripped - 3 Stacks for 1cc</div>
+                  <div class="product-item">Dark Oak & Stripped - 3 Stacks for 1cc</div>
+                  <div class="product-item out-of-stock">Birch & Stripped - 3 Stacks for 1cc</div>
+                </div>
+              </div>
+
+              <!-- Wooden Items Category -->
+              <div class="category-container">
+                <h2 class="product-category">Wooden Items</h2>
+                <div class="category-items">
+                  <div class="product-item">Item Frames - 8 for 1cc</div>
+                  <div class="product-item">Barrels - 32 for 1cc</div>
+                  <div class="product-item">Gates - 8 for 1cc</div>
+                  <div class="product-item">Trapdoors - 8 for 1cc</div>
+                  <div class="product-item">Doors - 8 for 1cc</div>
+                  <div class="product-item out-of-stock">Signs & Hanging - 8 for 1cc</div>
+                  <div class="product-item">Armor Stands - 8 for 1cc</div>
+                  <div class="product-item">Painting of BlueGamingCat - 1 for 1cc</div>
+                </div>
+              </div>
+
+              <!-- Enchanting Category -->
+              <div class="category-container">
+                <h2 class="product-category">Enchanting</h2>
+                <div class="category-items">
+                  <div class="product-item">Anvil - 1 for 1cc</div>
+                  <div class="product-item">Leather - 64 for 1cc</div>
+                  <div class="product-item">Lapis - 20 for 1cc</div>
+                  <div class="product-item out-of-stock">Paper - 64 for 1cc</div>
+                  <div class="product-item">EXP Bottles - 2 Stacks for 1cc</div>
+                  <div class="product-item">Books - 10 for 1cc</div>
+                  <div class="product-item">Enchanted Books - 1 for 1cc</div>
+                  <div class="product-item">Tree Feller - 1cc per Level</div>
+                  <div class="product-item">Tree Shaker - 1cc per Level</div>
+                </div>
+              </div>
+
+              <!-- Others Category -->
+              <div class="category-container">
+                <h2 class="product-category">Others</h2>
+                <div class="category-items">
+                  <div class="product-item">Steak Skewers - 32 for 1cc</div>
+                  <div class="product-item">Nether Wart - 64 for 1cc</div>
+                  <div class="product-item">Redstone Blocks - 8 for 1cc</div>
+                  <div class="product-item">Diamonds - 4 for 1cc</div>
+                  <div class="product-item">Lanterns - 16 for 1cc</div>
+                  <div class="product-item">Froglights - 64 for 1cc</div>
+                  <div class="product-item">Gunpowder - 16 for 1cc</div>
+                  <div class="product-item">Bone Blocks - 3 Stacks for 1cc</div>
+                  <div class="product-item">Ice - 64 for 1cc</div>
+                  <div class="product-item">Packed Ice - 10 for 1cc</div>
+                  <div class="product-item">Blue Ice - 2 for 1cc</div>
+                  <div class="product-item">Bundles - 1 for 1cc</div>
+                </div>
+              </div>
+
             </div>
-          </div>
-        
-        <!-- Others Category -->
-        <div class="category-container">
-            <h2 class="product-category">Others</h2>
-            <div class="category-items">
-              <div class="product-item">Steak Skewers - 32 for 1cc</div>
-              <div class="product-item">Nether Wart - 64 for 1cc</div>
-              <div class="product-item">Redstone Blocks - 8 for 1cc</div>
-              <div class="product-item">Diamonds - 4 for 1cc</div>
-              <div class="product-item">Lanterns - 16 for 1cc</div>
-              <div class="product-item">Froglights - 64 for 1cc</div>
-              <div class="product-item">Gunpowder - 16 for 1cc</div>
-              <div class="product-item">Bone Blocks - 3 Stacks for 1cc</div>
-              <div class="product-item">Ice - 64 for 1cc</div>
-              <div class="product-item">Packed Ice - 10 for 1cc</div>
-              <div class="product-item">Blue Ice - 2 for 1cc</div>
-              <div class="product-item">Bundles - 1 for 1cc</div>
-            </div>
-          </div>
-        
+        </div>
+        <div class="tattered-bottom"></div>
       </div>
     </div>
   </div>
 </body>
+
 </html>

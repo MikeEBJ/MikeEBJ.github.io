@@ -167,6 +167,16 @@ body::after {
   background-color: #3c3c3c;
 }
 
+.global-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FEEBDE;
+  z-index: -2;
+}
+
 /* Tattered Content */
 .tattered-content {
   width: 90%;
@@ -209,6 +219,43 @@ body::after {
   align-items: flex-start;
   padding-top: 6vh;
   box-sizing: border-box;
+}
+
+.tattered-background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tattered-top {
+  background: url('/assets/tattered_top.png') no-repeat center top;
+  background-size: contain;
+  width: 100%;
+  height: 100px;
+}
+
+.tattered-middle {
+  background: url('/assets/tattered_middle.png') repeat-y center;
+  background-size: contain;
+  width: 100%;
+  padding: 0 40px; /* optional side padding */
+}
+
+.tattered-bottom {
+  background: url('/assets/tattered_bottom.png') no-repeat center bottom;
+  background-size: contain;
+  width: 100%;
+  height: 100px;
+}
+
+.tattered-content {
+  padding: 20px;
+  font-family: 'Patrick Hand', cursive;
 }
 
 /* Hand-Drawn Shop Text */
