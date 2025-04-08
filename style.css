@@ -211,7 +211,6 @@ body::after {
   transform: translateX(-50%);
   width: 90%;
   top: 15vh;
-  background: url('assets/tattered-page.png') no-repeat center bottom;
   background-size: 100% 100%;
   z-index: 5;
   display: flex;
@@ -233,10 +232,19 @@ body::after {
 }
 
 .tattered-top {
-  background: url('/assets/tattered_top.png') no-repeat center top;
+  background-image: url('assets/tattered_top.png');
+  background-repeat: no-repeat;
   background-size: contain;
+  height: 100px; /* Try increasing this */
   width: 100%;
-  height: 100px;
+}
+
+.tattered-bottom {
+  background-image: url('/assets/tattered_bottom.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100px; /* Increase this too */
+  width: 100%;
 }
 
 .tattered-middle {
@@ -244,13 +252,6 @@ body::after {
   background-size: contain;
   width: 100%;
   padding: 0 40px; /* optional side padding */
-}
-
-.tattered-bottom {
-  background: url('/assets/tattered_bottom.png') no-repeat center bottom;
-  background-size: contain;
-  width: 100%;
-  height: 100px;
 }
 
 .tattered-content {
