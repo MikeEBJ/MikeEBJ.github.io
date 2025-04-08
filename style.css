@@ -168,8 +168,8 @@ body::after {
 
 .weekly-deals-button {
   position: absolute;
-  left: 70%; /* Push it toward the right */
-  top: calc(70% - 20px); /* 20px higher than the shop button */
+  left: 63%; /* Slightly more to the right */
+  top: calc(60% - 20px); /* Still 20px higher than the shop button */
   transform: translateX(-50%);
   z-index: 10;
 }
