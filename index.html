@@ -33,24 +33,45 @@
 </body>
 
 <script>
-  const hour = new Date().getHours();
-  let gradient;
-
-  if (hour >= 5 && hour < 8) {
-    // Sunrise
-    gradient = `linear-gradient(to bottom, #FFB347 0%, #FFD194 30%, #FFF5E1 90%)`;
-  } else if (hour >= 8 && hour < 17) {
-    // Day
-    gradient = `linear-gradient(to bottom, #68BEF3 0%, #90D9F7 30%, #D1EFFE 65%, #DEF2FD 90%)`;
-  } else if (hour >= 17 && hour < 20) {
-    // Sunset
-    gradient = `linear-gradient(to bottom, #FFA17F 0%, #FDCB82 40%, #FFE8D2 90%)`;
-  } else {
-    // Night
-    gradient = `linear-gradient(to bottom, #0B0C10 0%, #1F2833 50%, #45A29E 100%)`;
+  // Function to get the current hour (24-hour format)
+  function getTimeOfDay() {
+    const now = new Date();
+    const hours = now.getHours();
+    return hours;
   }
 
-  document.body.style.background = gradient;
+  // Function to update textures based on the time of day
+  function updateTextures() {
+    const hour = getTimeOfDay();
+    
+    const cloudsDay = 'assets/Backgrounds/Main/clouds.png'; // Day cloud texture
+    const cloudsNight = 'assets/Backgrounds/Main/dark-clouds.png'; // Night cloud texture
+    const slowcloudsDay = 'assets/Backgrounds/Main/slow-clouds.png'; // Day cloud texture
+    const slowcloudsNight = 'assets/Backgrounds/Main/dark-slow-clouds.png'; // Night cloud texture
+    const buttonDay = 'assets/Buttons/shop-button.png'; // Day button
+    const buttonNight = 'assets/Buttons/dark-shop-button.png'; // Night button
+
+    // Select the elements to update
+    const clouds = document.querySelector('.clouds');
+    const cloudsSlow = document.querySelector('.clouds-slow');
+    const shopButton = document.querySelector('.shop-button img');
+    
+    // Update textures based on the time of day (e.g., 6am-6pm is day, otherwise night)
+    if (hour >= 6 && hour < 18) {
+      // Daytime settings
+      clouds.style.backgroundImage = `url(${cloudsDay})`;
+      cloudsSlow.style.backgroundImage = `url(${slowcloudsDay})`;
+      shopButton.src = buttonDay;
+    } else {
+      // Nighttime settings
+      clouds.style.backgroundImage = `url(${cloudsNight})`;
+      cloudsSlow.style.backgroundImage = `url(${slowcloudsNight})`;
+      shopButton.src = buttonNight;
+    }
+  }
+
+  // Run the function to update textures when the page loads
+  window.onload = updateTextures;
 </script>
 
 </html>
