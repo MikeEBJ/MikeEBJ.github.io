@@ -226,8 +226,7 @@ body::after {
 .tattered-top {
   background-image: url('assets/tattered_top.png');
   background-repeat: no-repeat;
-  background-size: contain; /* Adjusts based on content */
-  height: auto; /* Remove the fixed height */
+  height: 500px; /* Increase this if needed */
 }
 
 .tattered-bottom {
