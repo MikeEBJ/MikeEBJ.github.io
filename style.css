@@ -156,9 +156,15 @@ body::after {
 }
 
 .weekly-deals-barrel img {
-  width: 40vw;
-  max-width: 650px;
+  width: 50vw; /* Half the width of the viewport */
+  max-width: 500px; /* Optional: Set a maximum width */
   height: auto;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust to perfectly center the image */
   transition: transform 0.3s ease;
 }
 
@@ -166,16 +172,21 @@ body::after {
   transform: scale(1.05);
 }
 
+/* Positioning the weekly deals button */
 .weekly-deals-button {
   position: absolute;
-  left: 63%; /* Slightly more to the right */
-  top: calc(60% - 20px); /* Still 20px higher than the shop button */
+  left: 63%; /* Pushes it more to the right */
+  top: calc(60% - 20px); /* Keeps it 20px higher than the shop button */
   transform: translateX(-50%);
   z-index: 10;
+  /* Adjustments for smaller screen sizes */
+  width: 20vw; /* Using viewport width to scale button size */
+  max-width: 250px; /* Optional: Cap the size for large screens */
 }
 
+/* Image inside the weekly deals button */
 .weekly-deals-button img {
-  width: 200px;
+  width: 100%; /* Make the image take the full width of its container */
   height: auto;
 }
 
@@ -378,6 +389,13 @@ h1 {
 /* -------- MEDIA QUERIES -------- */
 /* For devices with a maximum width of 768px (e.g., tablets) */
 @media only screen and (max-width: 768px) {
+  .weekly-deals-button {
+    left: 50%; /* Center the button for smaller screens */
+    top: calc(70% - 20px); /* Adjust the vertical position on smaller screens */
+    width: 40vw; /* Make it larger on smaller screens */
+    max-width: 200px; /* Cap the button width */
+  }
+
   .logo {
     height: 150px; /* Adjust logo size for tablets */
     top: 30px; /* Adjust position */
@@ -387,8 +405,17 @@ h1 {
     width: 280px; /* Scale down shop button */
   }
 
+  .weekly-deals-barrel img {
+    width: 240px; /* Scale down deals button */
+  }
+
   .tattered-content {
     font-size: 16px; /* Adjust font size */
+  }
+
+  .weekly-deals-barrel img {
+    width: 70vw; /* Make the image larger on smaller screens */
+    max-width: 350px; /* Optional: Cap the size on very small screens */
   }
 
   /* Additional responsive adjustments */
@@ -407,6 +434,11 @@ h1 {
 
   .tattered-content {
     font-size: 14px; /* Adjust font size */
+  }
+
+  .weekly-deals-button {
+    width: 60vw; /* Further increase size on very small screens */
+    max-width: 150px; /* Cap it to a more suitable size */
   }
 
   /* Additional responsive adjustments */
