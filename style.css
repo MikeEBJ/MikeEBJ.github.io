@@ -219,39 +219,43 @@ body::after {
   position: relative;
   z-index: 2;
   width: 90%;
-  max-width: 1000px;
+  max-width: 2000px;
   margin: 0 auto;
 }
 
 .tattered-top {
   background-image: url('assets/tattered_top.png');
   background-repeat: no-repeat;
-  background-size: 100% auto;
   height: 100px; /* Try increasing this */
-  width: 100%;
 }
 
 .tattered-bottom {
   background-image: url('/assets/tattered_bottom.png');
   background-repeat: no-repeat;
-  background-size: 100% auto;
   height: 100px; /* Increase this too */
-  width: 100%;
 }
 
 .tattered-middle {
   background: url('/assets/tattered_middle.png') repeat-y center;
-  background-size: contain;
-  width: 100%;
   flex-grow: 1;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+.tattered-top,
+.tattered-middle,
+.tattered-bottom {
+  width: 100%;
+  background-size: 100% auto; /* Makes them all match */
+}
+
 .tattered-content {
-  padding: 20px;
-  font-family: 'Patrick Hand', cursive;
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 80px;
+  line-height: 1.6;
+  box-sizing: border-box;
 }
 
 /* Hand-Drawn Shop Text */
