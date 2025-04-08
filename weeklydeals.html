@@ -65,7 +65,7 @@
     const clouds = document.querySelector('.clouds');
     const cloudsSlow = document.querySelector('.clouds-slow');
 
-    if (hour >= 6 && hour < 18) {
+    if (hour >= 6 && hour <= 20) {
       clouds.style.backgroundImage = `url(${cloudsDay})`;
       cloudsSlow.style.backgroundImage = `url(${slowcloudsDay})`;
     } else {
