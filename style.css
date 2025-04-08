@@ -163,38 +163,19 @@ body::after {
 
 .weekly-deals-button {
   position: absolute;
-  right: 5vw;
-  top: 50%;
-  transform: translateY(-50%);
+  left: 60%; /* Push it toward the right */
+  top: calc(60% - 20px); /* 20px higher than the shop button */
+  transform: translateX(-50%);
   z-index: 10;
 }
 
 .weekly-deals-button img {
-  width: 18vw;
-  max-width: 200px;
+  width: 200px;
   height: auto;
-  transition: transform 0.3s ease;
 }
 
 .weekly-deals-button img:hover {
   transform: scale(1.05);
-}
-
-.main-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  position: absolute;
-  top: 60%; /* adjust as needed */
-  left: 50%;
-  transform: translate(-50%, -20%); /* move up 20% */
-  z-index: 10;
-}
-
-.shop-button img,
-.weekly-button img {
-  width: 200px;
-  height: auto;
 }
 
 /* Back Button */
@@ -203,7 +184,7 @@ body::after {
   top: 2vh;
   left: 2vw;
   padding: 0.5em 1em;
-  background-color: #595959;
+  background-color: #005031;
   color: white;
   border: none;
   border-radius: 5px;
