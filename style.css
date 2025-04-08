@@ -147,7 +147,7 @@ body::after {
   display: block;
 }
 
-.daily-deals-barrel img {
+.weekly-deals-barrel img {
   width: 40vw;
   max-width: 500px;
   height: auto;
@@ -157,7 +157,7 @@ body::after {
   transition: transform 0.3s ease;
 }
 
-.daily-deals-barrel img:hover {
+.weekly-deals-barrel img:hover {
   transform: scale(1.05);
 }
 
@@ -178,6 +178,23 @@ body::after {
 
 .weekly-deals-button img:hover {
   transform: scale(1.05);
+}
+
+.main-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  position: absolute;
+  top: 60%; /* adjust as needed */
+  left: 50%;
+  transform: translate(-50%, -20%); /* move up 20% */
+  z-index: 10;
+}
+
+.shop-button img,
+.weekly-button img {
+  width: 200px;
+  height: auto;
 }
 
 /* Back Button */
