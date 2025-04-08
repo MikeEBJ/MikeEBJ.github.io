@@ -147,6 +147,39 @@ body::after {
   display: block;
 }
 
+.daily-deals-barrel img {
+  width: 40vw;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-top: 8vh;
+  transition: transform 0.3s ease;
+}
+
+.daily-deals-barrel img:hover {
+  transform: scale(1.05);
+}
+
+.weekly-deals-button {
+  position: absolute;
+  right: 5vw;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.weekly-deals-button img {
+  width: 18vw;
+  max-width: 200px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.weekly-deals-button img:hover {
+  transform: scale(1.05);
+}
+
 /* Back Button */
 .back-button {
   position: absolute;
