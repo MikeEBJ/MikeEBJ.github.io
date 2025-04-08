@@ -10,7 +10,7 @@ body {
   height: 100%;
   overflow-x: hidden;
   position: relative;
-  font-size: clamp(12px, 1.5vw, 18px); /* Responsive base font size */
+  font-size: clamp(12px, 1.5vw, 18px);
 }
 
 /* -------- LEGACY PAGE OVERRIDE -------- */
@@ -30,6 +30,7 @@ body {
       #90D9F7 30%,
       #D1EFFE 65%,
       #DEF2FD 90%);
+  transition: background 1s ease;
 }
 
 .logo {
