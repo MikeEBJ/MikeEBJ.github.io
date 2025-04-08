@@ -75,11 +75,14 @@
     const slowcloudsNight = 'assets/Backgrounds/Main/dark-slow-clouds.png'; // Night cloud texture
     const buttonDay = 'assets/Buttons/shop-button.png'; // Day button
     const buttonNight = 'assets/Buttons/dark-shop-button.png'; // Night button
+    const dealsButtonDay = 'assets/Buttons/weekly-deals-button.png'; // Day button
+    const dealsButtonNight = 'assets/Buttons/dark-weekly-deals-button.png'; // Night button
 
     // Select the elements to update
     const clouds = document.querySelector('.clouds');
     const cloudsSlow = document.querySelector('.clouds-slow');
     const shopButton = document.querySelector('.shop-button img');
+    const dealsButton = document.querySelector('.weekly-deals-button img');
 
     // Update textures based on the time of day (e.g., 6am-6pm is day, otherwise night)
     if (hour >= 6 && hour < 18) {
@@ -87,11 +90,13 @@
       clouds.style.backgroundImage = `url(${cloudsDay})`;
       cloudsSlow.style.backgroundImage = `url(${slowcloudsDay})`;
       shopButton.src = buttonDay;
+      dealsButton.src = dealsButtonDay;
     } else {
       // Nighttime settings
       clouds.style.backgroundImage = `url(${cloudsNight})`;
       cloudsSlow.style.backgroundImage = `url(${slowcloudsNight})`;
       shopButton.src = buttonNight;
+      dealsButton.src = dealsButtonNight;
     }
   }
 

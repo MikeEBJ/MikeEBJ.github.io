@@ -147,15 +147,19 @@ body::after {
   display: block;
 }
 
+.weekly-deals-barrel {
+  position: fixed;
+  bottom: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
 .weekly-deals-barrel img {
   width: 40vw;
   max-width: 500px;
   height: auto;
-  display: block;
-  margin: 15vh auto 0 auto; /* pushes it down further from top */
   transition: transform 0.3s ease;
-  z-index: 1; /* ensures it's above the background but not over logo */
-  position: relative; /* needed for z-index to take effect */
 }
 
 .weekly-deals-barrel img:hover {
