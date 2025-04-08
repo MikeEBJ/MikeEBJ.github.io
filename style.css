@@ -149,7 +149,7 @@ body::after {
 
 .weekly-deals-barrel {
   position: fixed;
-  bottom: 250px;
+  bottom: 450px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -157,7 +157,7 @@ body::after {
 
 .weekly-deals-barrel img {
   width: 40vw;
-  max-width: 500px;
+  max-width: 650px;
   height: auto;
   transition: transform 0.3s ease;
 }
@@ -168,8 +168,8 @@ body::after {
 
 .weekly-deals-button {
   position: absolute;
-  left: 60%; /* Push it toward the right */
-  top: calc(60% - 20px); /* 20px higher than the shop button */
+  left: 70%; /* Push it toward the right */
+  top: calc(70% - 20px); /* 20px higher than the shop button */
   transform: translateX(-50%);
   z-index: 10;
 }
