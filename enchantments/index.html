@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en" class="bg-black text-white scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>L&amp;M Enchantments</title><meta name="description" content="Detailed overview of all custom enchantments on the L&#38;M Minecraft server."><!-- Open Graph Meta Tags --><meta property="og:title" content="L&#38;M Enchantments"><meta property="og:description" content="Detailed overview of all custom enchantments on the L&#38;M Minecraft server."><meta property="og:image" content="https://lnmindustries.online/LnMLogoRQ.png"><meta property="og:url" content="https://lnmindustries.online"><meta property="og:type" content="website"><!-- Twitter Card Meta Tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="L&#38;M Enchantments"><meta name="twitter:description" content="Detailed overview of all custom enchantments on the L&#38;M Minecraft server."><meta name="twitter:image" content="https://lnmindustries.online/LnMLogoRQ.png"><link rel="stylesheet" href="/src/styles/global.css"><link rel="icon" href="/lnm_logo.webp" type="image/x-icon"><link rel="stylesheet" href="/_astro/enchantments.T053Iqop.css"></head> <body class="min-h-screen bg-gray-50 font-sans"> <!-- Alpine.js for toggle (include in <head> if not already): --> <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script> <header id="site-header" class="fixed top-0 left-0 w-full px-6 md:px-20 py-4 flex justify-between items-center z-50 bg-black/50 transition-colors duration-300" x-data="{ open: false }"> <!-- Left: Logo --> <a href="/" class="flex items-center gap-2 text-lg font-semibold tracking-wide hover-glow"> <img src="/lnm_logo.webp" alt="L&M Logo" class="w-10 h-10"> <span class="hidden sm:inline">L&M Industries</span> </a> <!-- Desktop Navigation --> <nav class="hidden md:flex space-x-8 text-base font-medium tracking-wide"> <a href="/rules" class="nav-item">Rules</a> <a href="/info" class="nav-item">Info</a> <a href="/enchantments" class="nav-item">Enchantments</a> <a href="https://modrinth.com/modpack/lnm-essentials" target="_blank" rel="noopener noreferrer" class="nav-item">
+Modpack
+</a> <a href="https://discord.gg/Km44tWdFzT" target="_blank" rel="noopener noreferrer" class="hover:scale-105 transition-transform"> <img src="/discord_logo.webp" alt="Join Discord" class="w-10 h-7.5 pt-1"> </a> </nav> <!-- Hamburger Button (mobile only) --> <button class="md:hidden flex items-center text-white focus:outline-none" @click="open = !open"> <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" :d="open ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'"></path> </svg> </button> <!-- Mobile Dropdown Menu --> <div class="md:hidden absolute top-full left-0 w-full bg-black/80 text-white flex flex-col items-center space-y-4 py-4 transition-all duration-300" x-show="open" @click.away="open = false" x-transition> <a href="/rules" class="nav-item">Rules</a> <a href="/info" class="nav-item">Info</a> <a href="https://modrinth.com/modpack/lnm-essentials" target="_blank" rel="noopener noreferrer" class="nav-item">
+Modpack
+</a> <a href="https://discord.gg/Km44tWdFzT" target="_blank" rel="noopener noreferrer" class="hover:scale-105 transition-transform"> <img src="/discord_logo.webp" alt="Join Discord" class="w-10 h-7.5 pt-1"> </a> </div> </header> <script>
+			window.addEventListener("scroll", () => {
+				const header = document.getElementById("site-header");
+				if (window.scrollY > 50) {
+					header.classList.add("header-transparent");
+				} else {
+					header.classList.remove("header-transparent");
+				}
+			});
+		</script> <main class="">  <section class="min-h-screen bg-[#0d2014] px-4 sm:px-6 py-20 text-white"> <div class="max-w-5xl mx-auto text-center mb-16"> <h1 class="text-4xl font-bold mb-4">🔮 Custom Enchantments</h1> <p class="text-lg text-gray-300">
+Discover the unique enchantments available on the L&M server.<br> Each
+        enchantment adds new gameplay dynamics, challenges, or fun mechanics.
+</p> </div> <div class="max-w-5xl mx-auto grid gap-6 md:grid-cols-2 items-stretch"> <!-- Enchantment Card --> <div class="bg-gray-800/50 rounded-xl p-5 shadow-lg border border-gray-700 flex flex-col h-full"> <div class="flex items-center justify-between mb-2"> <h2 class="text-xl font-semibold">🧲 Items Like Me</h2> <span class="bg-green-700 text-xs px-2 py-1 rounded-full">Utility</span> </div> <p class="text-sm text-gray-300 mb-4">
+Whenever you kill/mine with this enchantment on your item, it will
+          instantly teleport the item into your inventory.<br>
+If your inventory is full and there is nothing else it can stack into it
+          will just drop as normal.
+</p> <p class="text-sm text-gray-400 mt-auto">
+Max Level: <strong>I</strong> </p> </div> <div class="bg-gray-800/50 rounded-xl p-5 shadow-lg border border-gray-700 flex flex-col h-full"> <div class="flex items-center justify-between mb-2"> <h2 class="text-xl font-semibold">🪓 One Chop Wonder</h2> <span class="bg-green-700 text-xs px-2 py-1 rounded-full">Utility</span> </div> <p class="text-sm text-gray-300 mb-4">
+Break a single log to bring down the entire tree!<br>
+The amount broken increases by enchant level.<br>
+It will prefer Side → Diagonal → Vertical Diagonal → Vertical.<br>
+It will never expand downwards
+</p> <p class="text-sm text-gray-400 mt-auto">
+Max Level: <strong>VIII</strong> </p> </div> <div class="bg-gray-800/50 rounded-xl p-5 shadow-lg border border-gray-700 flex flex-col h-full row-span-2"> <div class="flex items-center justify-between mb-2"> <h2 class="text-xl font-semibold">🌀 Shredder</h2> <span class="bg-green-700 text-xs px-2 py-1 rounded-full">Utility</span> </div> <p class="text-sm text-gray-300 mb-2">
+Breaks blocks into their "next stage" automatically (stone → cobble,
+          logs → planks, etc).
+</p> <p class="text-sm text-gray-300 mb-2">
+Additional crushable conversions:
+</p> <ul class="text-sm text-gray-400 list-disc list-inside space-y-1 overflow-y-auto pr-1"> <li>Andesite, Diorite, Granite → Gravel</li> <li>Sand, Red Sand, Gravel → Clay / Sand</li> <li>
+Stone Bricks, Nether/Deepslate/Blackstone Bricks → Cracked variants
+</li> <li>Stone Slab → Cobblestone Slab</li> <li>Stone Stairs → Cobblestone Stairs</li> <li>Soul Soil → Soul Sand</li> </ul> <p class="text-sm text-gray-400 mt-auto pt-4">
+Max Level: <strong>X</strong> </p> </div> <div class="bg-gray-800/50 rounded-xl p-5 shadow-lg border border-gray-700 flex flex-col h-full"> <div class="flex items-center justify-between mb-2"> <h2 class="text-xl font-semibold">✨ XP Amplifier</h2> <span class="bg-green-700 text-xs px-2 py-1 rounded-full">Utility</span> </div> <p class="text-sm text-gray-300 mb-4">
+Gain more XP from mobs, blocks, and produce more bottles o'
+          enchanting.
+</p> <p class="text-sm text-gray-400 mt-auto">
+Max Level: <strong>V</strong> </p> </div> <div class="bg-gray-800/50 rounded-xl p-5 shadow-lg border border-gray-700 flex flex-col h-full"> <div class="flex items-center justify-between mb-2"> <h2 class="text-xl font-semibold">🧠 Miner's Instinct</h2> <span class="bg-green-700 text-xs px-2 py-1 rounded-full">Utility</span> </div> <p class="text-sm text-gray-300 mb-4">
+Breaks connected ores while mining. Each level breaks more!
+</p> <p class="text-sm text-gray-400 mt-auto">
+Max Level: <strong>V</strong> </p> </div> <div class="bg-gray-800/50 rounded-xl p-5 shadow-lg border border-gray-700 flex flex-col h-full"> <div class="flex items-center justify-between mb-2"> <h2 class="text-xl font-semibold">🛡️ Durashield™</h2> <span class="bg-green-700 text-xs px-2 py-1 rounded-full">Utility</span> </div> <p class="text-sm text-gray-300 mb-4">
+If your tool breaks while having this, the level of the enchantment
+          will reduce by 1.
+</p> <p class="text-sm text-gray-400 mt-auto">
+Max Level: <strong>X</strong> </p> </div> <div class="bg-gray-800/50 rounded-xl p-5 shadow-lg border border-gray-700 flex flex-col h-full"> <div class="flex items-center justify-between mb-2"> <h2 class="text-xl font-semibold">🙃 Curse of Butterfingers</h2> <span class="bg-red-700 text-xs px-2 py-1 rounded-full">Curse</span> </div> <p class="text-sm text-gray-300 mb-4">
+Gives a chance for the tool to just <i>slip</i> out of your hand!
+</p> <p class="text-sm text-gray-400 mt-auto">
+Max Level: <strong>X</strong> </p> </div> <div class="bg-gray-800/50 rounded-xl p-5 shadow-lg border border-gray-700 flex flex-col h-full"> <div class="flex items-center justify-between mb-2"> <h2 class="text-xl font-semibold">💥 Curse of Shattering</h2> <span class="bg-red-700 text-xs px-2 py-1 rounded-full">Curse</span> </div> <p class="text-sm text-gray-300 mb-4">
+Your tool will instantly break upon any use — Durashield™ protects
+          against this!
+</p> <p class="text-sm text-gray-400 mt-auto">
+Max Level: <strong>I</strong> </p> </div> <div class="bg-gray-800/50 rounded-xl p-5 shadow-lg border border-gray-700 flex flex-col h-full"> <div class="flex items-center justify-between mb-2"> <h2 class="text-xl font-semibold">🧠 Curse of the Slow Learner</h2> <span class="bg-red-700 text-xs px-2 py-1 rounded-full">Curse</span> </div> <p class="text-sm text-gray-300 mb-4">
+Prevents EXP gain from entities.
+</p> <p class="text-sm text-gray-400 mt-auto">
+Max Level: <strong>I</strong> </p> </div> <div class="bg-gray-800/50 rounded-xl p-5 shadow-lg border border-gray-700 flex flex-col h-full"> <div class="flex items-center justify-between mb-2"> <h2 class="text-xl font-semibold">🛠️ Curse of Rusted Tools</h2> <span class="bg-red-700 text-xs px-2 py-1 rounded-full">Curse</span> </div> <p class="text-sm text-gray-300 mb-4">
+Prevents repairing the item in anvils or with mending.
+</p> <p class="text-sm text-gray-400 mt-auto">
+Max Level: <strong>I</strong> </p> </div> <div class="bg-gray-800/50 rounded-xl p-5 shadow-lg border border-gray-700 flex flex-col h-full"> <div class="flex items-center justify-between mb-2"> <h2 class="text-xl font-semibold">🌀 Curse of Unchanging Fate</h2> <span class="bg-red-700 text-xs px-2 py-1 rounded-full">Curse</span> </div> <p class="text-sm text-gray-300 mb-4">
+Prevents an item from being upgraded or reforged at anvils or smithing
+          tables.
+</p> <p class="text-sm text-gray-400 mt-auto">
+Max Level: <strong>I</strong> </p> </div> <!-- Coming Soon Card --> <div class="bg-gray-800/30 rounded-xl p-5 shadow-inner border border-dashed border-gray-600 flex flex-col h-full md:col-span-2"> <h2 class="text-lg font-semibold mb-2">
+🔍 More enchantments coming soon...
+</h2> <p class="text-sm text-gray-400">
+Got ideas? Suggest them in our
+<a href="https://discord.gg/Km44tWdFzT" class="text-blue-400 hover:underline">Discord server</a>!
+</p> </div> </div> <div class="pt-12 text-center text-gray-500 text-sm"> <p>
+Return to <a href="/" class="text-blue-400 hover:underline">home</a> or join
+        our
+<a href="https://discord.gg/Km44tWdFzT" class="text-blue-400 hover:underline">Discord</a> for updates.
+</p> </div> </section>  </main> <footer class="relative text-gray-500 py-8 text-sm bg-gradient-to-r from-[#0b4201] to-[#013788]"> <!-- Top gradient that overlays upward into the section above --> <div class="absolute top-[-20px] left-0 w-full h-[20px] bg-gradient-to-t from-black/30 to-transparent pointer-events-none z-10"></div> <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between px-6 gap-6"> <!-- Disclaimer text on the left --> <div class="text-outline text-center sm:text-left text-sm max-w-lg"> <p class="text-gray-200">
+&copy; 2025 L&M Industries. All rights
+						reserved.
+</p> <p class="text-gray-500">
+L&M is not an official Minecraft Community. L&M is not
+						approved by or associated with Mojang or Microsoft.
+<br><br> <span class="inline-flex items-center gap-1"> <img src="/kofiCup.png" alt="Heart icon" class="w-4 h-4 inline-block"> <span>Feeling nice?</span> <a href="https://ko-fi.com/mikeebj" target="_blank" rel="noopener noreferrer" class="underline hover:text-gray-300">
+Support us with a donation!
+</a> </span> </p> </div> <!-- Discord join button on the right --> <a href="https://discord.gg/Km44tWdFzT" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#5865F2] text-white font-semibold px-8 py-3 rounded transition text-lg shadow-md hover:shadow-[0_0_10px_3px_rgba(88,101,242,0.7)] transform hover:scale-105">
+Join our Discord
+</a> </div> </footer> </body></html>
