@@ -1,0 +1,447 @@
+<!DOCTYPE html><html lang="en" class="bg-black text-white scroll-smooth"> <head><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>L&amp;M Kingdoms</title><meta name="description" content="Live map of claimed kingdoms on the L&#38;M server."><!-- Open Graph Meta Tags --><meta property="og:title" content="L&#38;M Kingdoms"><meta property="og:description" content="Live map of claimed kingdoms on the L&#38;M server."><meta property="og:image" content="https://lnm.wtf/LnMLogoRQ.png"><meta property="og:url" content="https://lnm.wtf"><meta property="og:type" content="website"><!-- Twitter Card Meta Tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="L&#38;M Kingdoms"><meta name="twitter:description" content="Live map of claimed kingdoms on the L&#38;M server."><meta name="twitter:image" content="https://lnm.wtf/LnMLogoRQ.png"><link rel="stylesheet" href="/src/styles/global.css"><link rel="icon" href="/lnm_logo.webp" type="image/x-icon"><link rel="stylesheet" href="/_astro/banner.DRiLgQVZ.css"></head> <body class="min-h-screen bg-gray-50 font-sans"> <!-- Alpine.js for toggle (include in <head> if not already): --> <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script> <header id="site-header" class="fixed top-0 left-0 w-full px-6 md:px-20 py-4 flex justify-between items-center z-50 bg-black/50 transition-colors duration-300" x-data="{ scrolled: false, open: false }" x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 50 })"> <!-- Left: Logo --> <a href="/" class="flex items-center gap-2 text-lg font-semibold tracking-wide hover-glow"> <img src="/lnm_logo.webp" alt="L&M Logo" class="w-10 h-10"> <span class="hidden sm:inline">L&M Industries</span> </a> <!-- Centered text --> <div class="absolute left-1/2 transform -translate-x-1/2 text-white font-medium text-bold text-xl transition-opacity duration-500" :class="{ 'opacity-0': scrolled, 'opacity-100': !scrolled }">
+Season 3 - Vanilla Plus
+</div> <!-- Desktop Navigation --> <nav class="hidden md:flex items-center space-x-2 text-center text-base font-medium tracking-wide"> <!-- Group 1 (subtle blue) --> <div class="flex items-center space-x-1 bg-blue-500/10 px-1.5 py-1 rounded-lg"> <a href="/rules" class="nav-item inline-flex items-center h-9 px-2 rounded hover:bg-white/10 transition">Rules</a> <a href="/info" class="nav-item inline-flex items-center h-9 px-2 rounded hover:bg-white/10 transition">Info</a> <a href="/classes" class="nav-item inline-flex items-center h-9 px-2 rounded hover:bg-white/10 transition">Classes</a> <a href="https://modrinth.com/modpack/lnm-essentials/version/1.0.0" target="_blank" rel="noopener noreferrer" class="nav-item inline-flex items-center h-9 px-2 rounded hover:bg-white/10 transition">
+Modpack
+</a> </div> <!-- Group 2 (subtle green) --> <div class="flex items-center space-x-1 bg-green-500/10 px-1.5 py-1 rounded-lg"> <a href="/donate" class="nav-item inline-flex items-center gap-2 h-9 px-2 rounded hover:bg-white/10 transition"> <img src="/kofi_symbol.png" alt="Ko-fi" class="w-6 h-6 block object-contain"> <span class="hidden sm:inline relative -translate-y-[1px]">Donate</span> </a> <a href="https://discord.gg/Km44tWdFzT" target="_blank" rel="noopener noreferrer" class="nav-item inline-flex items-center gap-2 h-9 px-2 rounded hover:bg-white/10 transition"> <img src="/Discord-Logo-Blurple.png" alt="Discord" class="w-26 h-16 block object-contain"> </a> </div> </nav> <!-- Hamburger Button (mobile only) --> <button class="md:hidden flex items-center text-white focus:outline-none" @click="open = !open"> <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" :d="open ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'"></path> </svg> </button> <!-- Mobile Dropdown Menu --> <div class="md:hidden absolute top-full left-0 w-full bg-black/80 text-white flex flex-col items-center space-y-4 py-4 transition-all duration-300" x-show="open" @click.away="open = false" x-transition> <a href="/rules" class="nav-item">Rules</a> <a href="/info" class="nav-item">Info</a> <a href="/items" class="nav-item">Items</a> <a href="/enchantments" class="nav-item">Enchantments</a> <a href="/kingdoms" class="nav-item">Kingdoms</a> <a href="https://discord.gg/Km44tWdFzT" target="_blank" rel="noopener noreferrer" class="nav-item">
+Discord
+</a> <a href="/donate" class="nav-item">Donate</a> </div> </header> <script>
+			window.addEventListener("scroll", () => {
+				const header = document.getElementById("site-header");
+				if (window.scrollY > 50) {
+					header.classList.add("header-transparent");
+				} else {
+					header.classList.remove("header-transparent");
+				}
+			});
+		</script> <main class="">  <section class="min-h-screen bg-[#0d2014] px-4 sm:px-6 pt-32 pb-20 text-white"> <div class="max-w-5xl mx-auto"> <div class="text-center mb-8"> <h1 class="text-4xl font-bold mb-3">🏰 Kingdoms Map</h1> <p class="text-gray-300">Live view of claimed chunks across the L&M world.</p> </div> <!-- Legend + focus button --> <div class="flex flex-wrap items-center gap-2 mb-4 min-h-[28px]"> <div id="legend" class="flex flex-wrap gap-2 flex-1"></div> <p id="no-claims-msg" class="hidden text-sm text-gray-500 italic">No chunks claimed yet.</p> <span id="last-updated" class="text-xs text-gray-600 tabular-nums"></span> <button id="focus-btn" class="hidden text-xs bg-gray-700/70 hover:bg-gray-600/70 border border-gray-600/50 text-gray-300 px-3 py-1.5 rounded-lg transition">
+🎯 Focus claims
+</button> <button id="reset-btn" class="text-xs bg-gray-700/70 hover:bg-gray-600/70 border border-gray-600/50 text-gray-300 px-3 py-1.5 rounded-lg transition">
+↩ Fit map
+</button> </div> <!-- Canvas container --> <div class="relative bg-black border border-gray-700/60 rounded-xl overflow-hidden"> <canvas id="kingdoms-map" class="block w-full" style="touch-action: none; cursor: crosshair;"></canvas> <!-- Tooltip --> <div id="map-tooltip" class="absolute pointer-events-none hidden bg-gray-900/95 border border-gray-700/80 rounded-lg px-3 py-2 text-xs text-white shadow-xl z-10 leading-5"></div> <!-- Coordinate HUD --> <div id="map-hud" class="absolute bottom-2 left-3 text-xs font-mono text-gray-400/60 pointer-events-none select-none">X — &nbsp; Z —</div> <!-- Loading / error overlay --> <div id="map-overlay" class="absolute inset-0 flex items-center justify-center text-gray-400 text-sm bg-black/60">
+Loading map…
+</div> </div> <p class="text-xs text-gray-600 mt-3 text-center">Scroll / pinch to zoom · Drag to pan · Hover to inspect</p> </div> </section>  </main> <footer class="relative text-gray-500 py-8 text-sm bg-gradient-to-r from-[#0b4201] to-[#013788]"> <!-- Top gradient that overlays upward into the section above --> <div class="absolute top-[-20px] left-0 w-full h-[20px] bg-gradient-to-t from-black/30 to-transparent pointer-events-none z-10"></div> <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between px-6 gap-6"> <!-- Disclaimer text on the left --> <div class="text-outline text-center sm:text-left text-sm max-w-lg"> <p class="text-gray-200">
+&copy; 2026 L&M Industries. All rights
+						reserved.
+</p> <p class="text-gray-500">
+L&M is not an official Minecraft Community. L&M is not
+						approved by or associated with Mojang or Microsoft.
+<br><br> <span class="inline-flex items-center gap-1"> <img src="/kofi_symbol.png" alt="Heart icon" class="w-4 h-4 inline-block"> <span>Feeling nice?</span> <a href="https://ko-fi.com/mikeebj" target="_blank" rel="noopener noreferrer" class="underline hover:text-gray-300">
+Support us with a donation!
+</a> </span> </p> </div> <!-- Discord join button on the right --> <a href="https://discord.gg/Km44tWdFzT" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#5865F2] text-white font-semibold px-8 py-3 rounded transition text-lg shadow-md hover:shadow-[0_0_10px_3px_rgba(88,101,242,0.7)] transform hover:scale-105">
+Join our Discord
+</a> </div> </footer> </body></html> <script>
+(async () => {
+  const canvas        = document.getElementById('kingdoms-map');
+  const ctx           = canvas.getContext('2d');
+  const tooltip       = document.getElementById('map-tooltip');
+  const overlay       = document.getElementById('map-overlay');
+  const legendEl      = document.getElementById('legend');
+  const focusBtn      = document.getElementById('focus-btn');
+  const resetBtn      = document.getElementById('reset-btn');
+  const hudEl         = document.getElementById('map-hud');
+  const noClaimsMsg   = document.getElementById('no-claims-msg');
+  const lastUpdatedEl = document.getElementById('last-updated');
+  let   lastUpdatedAt = 0;
+
+  function refreshTimestamp() {
+    if (!lastUpdatedAt) return;
+    const s = Math.floor((Date.now() - lastUpdatedAt) / 1000);
+    lastUpdatedEl.textContent = s < 5 ? 'Updated just now' : `Updated ${s}s ago`;
+  }
+
+  // ── Load map image + API data in parallel ─────────────────────────────────
+  const [rawData, mapImg] = await Promise.all([
+    fetch('https://lnm-kingdoms.bluegamingcat1.workers.dev/')
+      .then(r => r.json()).catch(() => null),
+    new Promise(resolve => {
+      const img = new Image();
+      img.onload  = () => resolve(img);
+      img.onerror = () => resolve(null);
+      img.src = '/season_3_map.png';
+    }),
+  ]);
+
+  if (!rawData || !mapImg) {
+    overlay.textContent = 'Failed to load map.';
+    return;
+  }
+  overlay.style.display = 'none';
+
+  // Map pixel dimensions — 1 px = 1 block
+  // Block (-16, -16) = pixel (0, 0), so pixel = block + 16
+  const MAP_W = mapImg.naturalWidth;
+  const MAP_H = mapImg.naturalHeight;
+  const MAP_OX = 16.5; // block-to-pixel offset X
+  const MAP_OZ = 16.5; // block-to-pixel offset Z
+
+  // ── Color + chunk data ────────────────────────────────────────────────────
+  function uuidToHue(id) {
+    let h = 0;
+    for (let i = 0; i < id.length; i++) { h = id.charCodeAt(i) + ((h << 5) - h) | 0; }
+    return Math.abs(h) % 360;
+  }
+
+  const chunkMap    = {};    // "cx,cz" → { name, hue }
+  const kingdoms    = {};    // id → { name, hue, count }
+  const playerNames = {};    // uuid → minecraft username (null = fetch attempted, no result)
+
+  async function fetchPlayerName(uuid) {
+    if (uuid in playerNames) return;
+    playerNames[uuid] = null; // mark in-flight so concurrent calls don't double-fetch
+    try {
+      const res = await fetch(`https://playerdb.co/api/player/minecraft/${uuid}`);
+      if (res.ok) {
+        const json = await res.json();
+        const p = json?.data?.player;
+        if (p?.username) playerNames[uuid] = {
+          name: p.username,
+          avatar: `https://crafthead.net/helm/${uuid.replace(/-/g, '')}`,
+        };
+      }
+    } catch {}
+  }
+
+  function buildLegend() {
+    legendEl.innerHTML = '';
+    for (const [id, { name, hue, count }] of Object.entries(kingdoms)) {
+      const color = `hsl(${hue},70%,55%)`;
+      const player = playerNames[id];
+      const el = document.createElement('div');
+      el.className = 'flex items-center gap-2 bg-gray-800/60 border border-gray-700/50 rounded-lg px-3 py-1.5 text-sm';
+      el.style.position = 'relative';
+
+      el.innerHTML =
+        `<span style="width:12px;height:12px;border-radius:3px;background:${color};flex-shrink:0;display:inline-block"></span>` +
+        `<span class="text-gray-200 font-medium">${name}</span>` +
+        `<span class="text-gray-500 text-xs">${count} chunk${count !== 1 ? 's' : ''}</span>`;
+
+      if (player) {
+        const tip = document.createElement('div');
+        tip.style.cssText = 'position:absolute;bottom:calc(100% + 6px);left:0;padding:6px 10px;background:#030712;border:1px solid rgba(55,65,81,0.6);border-radius:8px;font-size:12px;color:#d1d5db;white-space:nowrap;pointer-events:none;z-index:20;opacity:0;transition:opacity 0.15s;display:flex;align-items:center;gap:8px';
+        tip.innerHTML = player.avatar
+          ? `<img src="${player.avatar}" style="width:32px;height:32px;image-rendering:pixelated;border-radius:4px" /><span>${player.name}</span>`
+          : `<span>${player.name}</span>`;
+        el.appendChild(tip);
+        el.addEventListener('mouseenter', () => tip.style.opacity = '1');
+        el.addEventListener('mouseleave', () => tip.style.opacity = '0');
+      }
+      legendEl.appendChild(el);
+    }
+    noClaimsMsg.classList.toggle('hidden', Object.keys(chunkMap).length > 0);
+  }
+
+  function applyData(raw) {
+    const { claims = {}, names = {} } = raw;
+    for (const k in chunkMap) delete chunkMap[k];
+    for (const k in kingdoms) delete kingdoms[k];
+    for (const [id, chunks] of Object.entries(claims)) {
+      const name = names[id] || 'Unknown';
+      const hue  = uuidToHue(id);
+      kingdoms[id] = { name, hue, count: chunks.length };
+      for (const coord of chunks) chunkMap[coord] = { name, hue };
+    }
+    buildLegend();
+    // Fetch usernames for any new UUIDs, then refresh the legend with names
+    const missing = Object.keys(kingdoms).filter(id => !(id in playerNames));
+    if (missing.length) {
+      Promise.all(missing.map(fetchPlayerName)).then(buildLegend);
+    }
+    focusBtn.classList.toggle('hidden', Object.keys(chunkMap).length === 0);
+    lastUpdatedAt = Date.now();
+    refreshTimestamp();
+    draw();
+  }
+
+  const hasClaims = Object.keys(rawData.claims || {}).length > 0;
+
+  const DPR = window.devicePixelRatio || 1;
+
+  // ── View state — zoom = CSS px per block ─────────────────────────────────
+  let zoom = 1, panX = 0, panY = 0, minZoom = 0.05;
+
+  function fitMap() {
+    const cw = canvas.clientWidth;
+    const ch = canvas.clientHeight;
+    zoom = Math.min(cw / MAP_W, ch / MAP_H);
+    minZoom = zoom; // never allow zooming out past full-map view
+    panX = (cw - MAP_W * zoom) / 2;
+    panY = (ch - MAP_H * zoom) / 2;
+  }
+
+  // Keep the map from leaving the canvas
+  function clampPan() {
+    const cw = canvas.clientWidth;
+    const ch = canvas.clientHeight;
+    const mw = MAP_W * zoom;
+    const mh = MAP_H * zoom;
+    panX = mw <= cw ? (cw - mw) / 2 : Math.max(cw - mw, Math.min(panX, 0));
+    panY = mh <= ch ? (ch - mh) / 2 : Math.max(ch - mh, Math.min(panY, 0));
+  }
+
+  function focusClaims() {
+    const coords = Object.keys(chunkMap).map(k => k.split(',').map(Number));
+    if (!coords.length) return;
+    const xs = coords.map(([x]) => x);
+    const zs = coords.map(([, z]) => z);
+    // Convert chunk bounds to pixel coords (pixel = block + offset)
+    const pMinX = Math.min(...xs) * 16 + MAP_OX;
+    const pMaxX = (Math.max(...xs) + 1) * 16 + MAP_OX;
+    const pMinZ = Math.min(...zs) * 16 + MAP_OZ;
+    const pMaxZ = (Math.max(...zs) + 1) * 16 + MAP_OZ;
+    const PAD   = 80; // pixel padding around claims
+    const cw = canvas.clientWidth;
+    const ch = canvas.clientHeight;
+    zoom = Math.min(cw / (pMaxX - pMinX + PAD * 2), ch / (pMaxZ - pMinZ + PAD * 2));
+    zoom = Math.max(minZoom, Math.min(zoom, 20));
+    panX = cw / 2 - ((pMinX + pMaxX) / 2) * zoom;
+    panY = ch / 2 - ((pMinZ + pMaxZ) / 2) * zoom;
+    clampPan();
+    draw();
+  }
+
+  // Canvas-pixel → chunk coordinate (invert: block = pixel - offset)
+  function canvasToChunk(mx, my) {
+    const blockX = (mx - panX) / zoom - MAP_OX;
+    const blockZ = (my - panY) / zoom - MAP_OZ;
+    return {
+      x: Math.floor(blockX / 16),
+      z: Math.floor(blockZ / 16),
+    };
+  }
+
+  // ── Draw ─────────────────────────────────────────────────────────────────
+  function draw() {
+    const cw = canvas.clientWidth;
+    const ch = canvas.clientHeight;
+    ctx.save();
+    ctx.scale(DPR, DPR);
+    ctx.imageSmoothingEnabled = false;
+    ctx.clearRect(0, 0, cw, ch);
+
+    // Background
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, cw, ch);
+
+    // Clip to map bounds so nothing bleeds outside
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(panX, panY, MAP_W * zoom, MAP_H * zoom);
+    ctx.clip();
+
+    // Map image
+    ctx.drawImage(mapImg, panX, panY, MAP_W * zoom, MAP_H * zoom);
+
+    // Chunk overlays — pixel = (chunk * 16 + offset) * zoom + pan
+    const chunkPx = 16 * zoom;
+    const same = (nx, nz, name) => chunkMap[`${nx},${nz}`]?.name === name;
+
+    // 1. Fills (all chunks)
+    for (const [key, k] of Object.entries(chunkMap)) {
+      const [cx, cz] = key.split(',').map(Number);
+      const px = panX + (cx * 16 + MAP_OX) * zoom;
+      const py = panY + (cz * 16 + MAP_OZ) * zoom;
+      ctx.globalAlpha = 0.38;
+      ctx.fillStyle = `hsl(${k.hue},80%,55%)`;
+      ctx.fillRect(px, py, chunkPx, chunkPx);
+    }
+
+    // 2. Outer edges only — skip any edge shared with a same-kingdom neighbour
+    ctx.globalAlpha = 0.9;
+    ctx.lineWidth = Math.max(1.5, chunkPx * 0.06);
+    for (const [key, k] of Object.entries(chunkMap)) {
+      const [cx, cz] = key.split(',').map(Number);
+      const px = panX + (cx * 16 + MAP_OX) * zoom;
+      const py = panY + (cz * 16 + MAP_OZ) * zoom;
+      ctx.strokeStyle = `hsl(${k.hue},80%,65%)`;
+      ctx.beginPath();
+      if (!same(cx, cz - 1, k.name)) { ctx.moveTo(px,           py);           ctx.lineTo(px + chunkPx, py);           }
+      if (!same(cx, cz + 1, k.name)) { ctx.moveTo(px,           py + chunkPx); ctx.lineTo(px + chunkPx, py + chunkPx); }
+      if (!same(cx - 1, cz, k.name)) { ctx.moveTo(px,           py);           ctx.lineTo(px,           py + chunkPx); }
+      if (!same(cx + 1, cz, k.name)) { ctx.moveTo(px + chunkPx, py);           ctx.lineTo(px + chunkPx, py + chunkPx); }
+      ctx.stroke();
+    }
+
+    // 3. Label at centroid of each kingdom's claimed area
+    if (chunkPx > 30) {
+      const groups = {};
+      for (const [key, k] of Object.entries(chunkMap)) {
+        const [cx, cz] = key.split(',').map(Number);
+        (groups[k.name] = groups[k.name] || { hue: k.hue, xs: [], zs: [] }).xs.push(cx);
+        groups[k.name].zs.push(cz);
+      }
+      ctx.globalAlpha = 0.9;
+      ctx.fillStyle = '#fff';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.font = `bold ${Math.min(chunkPx * 0.18, 12)}px sans-serif`;
+      for (const [name, { xs, zs }] of Object.entries(groups)) {
+        const avgX = xs.reduce((a, v) => a + v, 0) / xs.length;
+        const avgZ = zs.reduce((a, v) => a + v, 0) / zs.length;
+        const lx = panX + (avgX * 16 + 8 + MAP_OX) * zoom;
+        const lz = panY + (avgZ * 16 + 8 + MAP_OZ) * zoom;
+        ctx.fillText(name, lx, lz);
+      }
+    }
+
+    ctx.globalAlpha = 1;
+    ctx.restore(); // end clip
+    ctx.restore(); // end DPR scale
+  }
+
+  // ── Resize ───────────────────────────────────────────────────────────────
+  function resize() {
+    const w = canvas.parentElement.clientWidth;
+    if (!w) { requestAnimationFrame(resize); return; }
+    const h = Math.max(560, Math.round(w * 0.82));
+    canvas.width  = w * DPR;
+    canvas.height = h * DPR;
+    canvas.style.height = h + 'px';
+    fitMap();
+    draw();
+  }
+
+  // ── Initial data + auto-refresh every 60 s ───────────────────────────────
+  applyData(rawData);
+  setInterval(async () => {
+    const fresh = await fetch('https://lnm-kingdoms.bluegamingcat1.workers.dev/').then(r => r.json()).catch(() => null);
+    if (fresh) applyData(fresh);
+  }, 60_000);
+  setInterval(refreshTimestamp, 5000);
+
+  // ── Tooltip + coordinate HUD ──────────────────────────────────────────────
+  canvas.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    const mx = e.clientX - rect.left;
+    const my = e.clientY - rect.top;
+
+    const bx = Math.floor((mx - panX) / zoom - MAP_OX);
+    const bz = Math.floor((my - panY) / zoom - MAP_OZ);
+    hudEl.textContent = `X ${bx}  Z ${bz}`;
+
+    const { x: cx, z: cz } = canvasToChunk(mx, my);
+    const k = chunkMap[`${cx},${cz}`];
+    if (k) {
+      tooltip.classList.remove('hidden');
+      tooltip.style.left = (mx + 14) + 'px';
+      tooltip.style.top  = (my - 8) + 'px';
+      tooltip.innerHTML =
+        `<span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:hsl(${k.hue},80%,55%);margin-right:5px;vertical-align:middle"></span>` +
+        `<strong>${k.name}</strong><br>` +
+        `<span style="color:#9ca3af">Chunk&nbsp;${cx},&nbsp;${cz}</span><br>` +
+        `<span style="color:#6b7280">Block&nbsp;${cx * 16},&nbsp;${cz * 16}</span>`;
+    } else {
+      tooltip.classList.add('hidden');
+    }
+  });
+
+  canvas.addEventListener('mouseleave', () => {
+    hudEl.textContent = 'X —  Z —';
+    tooltip.classList.add('hidden');
+  });
+
+  // ── Pan ──────────────────────────────────────────────────────────────────
+  let dragging = false, dragStart = { x: 0, y: 0 };
+
+  canvas.addEventListener('mousedown', e => {
+    dragging = true;
+    dragStart = { x: e.clientX - panX, y: e.clientY - panY };
+    canvas.style.cursor = 'grabbing';
+  });
+  window.addEventListener('mouseup', () => { dragging = false; canvas.style.cursor = 'crosshair'; });
+  window.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    panX = e.clientX - dragStart.x;
+    panY = e.clientY - dragStart.y;
+    clampPan();
+    draw();
+  });
+
+  // ── Zoom toward cursor ────────────────────────────────────────────────────
+  canvas.addEventListener('wheel', e => {
+    e.preventDefault();
+    const factor = e.deltaY < 0 ? 1.15 : 1 / 1.15;
+    const rect = canvas.getBoundingClientRect();
+    const mx = e.clientX - rect.left;
+    const my = e.clientY - rect.top;
+    panX = mx - (mx - panX) * factor;
+    panY = my - (my - panY) * factor;
+    zoom = Math.max(minZoom, Math.min(zoom * factor, 30));
+    clampPan();
+    draw();
+  }, { passive: false });
+
+  // ── Touch (pan + pinch zoom) ──────────────────────────────────────────────
+  let lastTouches = null, touchStartPos = null;
+  const getTouches = e => Array.from(e.touches).map(t => ({ x: t.clientX, y: t.clientY }));
+
+  canvas.addEventListener('touchstart', e => {
+    e.preventDefault();
+    lastTouches = getTouches(e);
+    touchStartPos = e.touches.length === 1
+      ? { x: e.touches[0].clientX, y: e.touches[0].clientY }
+      : null;
+    tooltip.classList.add('hidden');
+  }, { passive: false });
+
+  canvas.addEventListener('touchmove', e => {
+    e.preventDefault();
+    const touches = getTouches(e);
+    if (!lastTouches) { lastTouches = touches; return; }
+
+    if (touches.length === 1 && lastTouches.length >= 1) {
+      panX += touches[0].x - lastTouches[0].x;
+      panY += touches[0].y - lastTouches[0].y;
+      clampPan();
+      draw();
+    } else if (touches.length === 2 && lastTouches.length === 2) {
+      const prev = Math.hypot(lastTouches[1].x - lastTouches[0].x, lastTouches[1].y - lastTouches[0].y);
+      const curr = Math.hypot(touches[1].x - touches[0].x, touches[1].y - touches[0].y);
+      if (prev === 0) { lastTouches = touches; return; }
+      const factor = curr / prev;
+      const rect = canvas.getBoundingClientRect();
+      const mx = (touches[0].x + touches[1].x) / 2 - rect.left;
+      const my = (touches[0].y + touches[1].y) / 2 - rect.top;
+      panX = mx - (mx - panX) * factor;
+      panY = my - (my - panY) * factor;
+      zoom = Math.max(minZoom, Math.min(zoom * factor, 30));
+      clampPan();
+      draw();
+    }
+    lastTouches = touches;
+  }, { passive: false });
+
+  canvas.addEventListener('touchend', e => {
+    if (e.changedTouches.length === 1 && touchStartPos) {
+      const t = e.changedTouches[0];
+      if (Math.hypot(t.clientX - touchStartPos.x, t.clientY - touchStartPos.y) < 8) {
+        const rect = canvas.getBoundingClientRect();
+        const mx = t.clientX - rect.left;
+        const my = t.clientY - rect.top;
+        const { x: cx, z: cz } = canvasToChunk(mx, my);
+        const k = chunkMap[`${cx},${cz}`];
+        if (k) {
+          tooltip.classList.remove('hidden');
+          tooltip.style.left = Math.min(mx + 14, canvas.clientWidth - 160) + 'px';
+          tooltip.style.top  = Math.max(my - 60, 4) + 'px';
+          tooltip.innerHTML =
+            `<span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:hsl(${k.hue},80%,55%);margin-right:5px;vertical-align:middle"></span>` +
+            `<strong>${k.name}</strong><br>` +
+            `<span style="color:#9ca3af">Chunk&nbsp;${cx},&nbsp;${cz}</span><br>` +
+            `<span style="color:#6b7280">Block&nbsp;${cx * 16},&nbsp;${cz * 16}</span>`;
+          setTimeout(() => tooltip.classList.add('hidden'), 3000);
+        }
+      }
+    }
+    touchStartPos = null;
+    lastTouches = getTouches(e);
+  }, { passive: false });
+
+  // ── Buttons ───────────────────────────────────────────────────────────────
+  focusBtn.addEventListener('click', focusClaims);
+  resetBtn.addEventListener('click', () => { fitMap(); draw(); });
+
+  // ── Init ─────────────────────────────────────────────────────────────────
+  resize();
+  window.addEventListener('resize', resize);
+})();
+</script>
